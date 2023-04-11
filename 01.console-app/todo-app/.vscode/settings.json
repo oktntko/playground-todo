@@ -1,0 +1,19 @@
+{
+  "[java]": {
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.format.settings.url": "${workspaceFolder}/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
+  "java.checkstyle.configuration": "${workspaceFolder}/google_checks.xml",
+  "java.checkstyle.version": "10.9.3"
+}
