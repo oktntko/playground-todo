@@ -2,6 +2,7 @@ package playground.todo;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
 
 import de.codeshelf.consoleui.elements.ConfirmChoice;
 import de.codeshelf.consoleui.prompt.CheckboxResult;
@@ -16,15 +17,34 @@ import de.codeshelf.consoleui.prompt.builder.ListPromptBuilder;
 
 public class MyPrompt {
 
+  public static void showDemo() throws IOException {
+
+    MyPrompt.input("input", "");
+
+    MyPrompt.select("select", List.of("a", "b", "c"));
+
+    MyPrompt.selectMultiple("selectMultiple", List.of("1", "2", "3"));
+
+    MyPrompt.confirm("confirm", ConfirmChoice.ConfirmationValue.NO);
+  }
+
   public static String input(String message) throws IOException {
+    return input(message, "");
+  }
+
+  public static String input(String message, String defaultValue) throws IOException {
     final var name = "name";
 
-    ConsolePrompt prompt = new ConsolePrompt(); // #2
+    ConsolePrompt prompt = new ConsolePrompt();
     InputValueBuilder builder = prompt
         .getPromptBuilder()
         .createInputPrompt()
         .name(name)
         .message(message);
+
+    if (defaultValue != null && !defaultValue.isEmpty()) {
+      builder.defaultValue(defaultValue);
+    }
 
     var map = prompt.prompt(builder.addPrompt().build());
     var result = (InputResult) map.get(name);
@@ -32,7 +52,7 @@ public class MyPrompt {
     return result.getInput();
   }
 
-  public static String select(String message, String... options) throws IOException {
+  public static String select(String message, List<String> options) throws IOException {
     final var name = "name";
 
     ConsolePrompt prompt = new ConsolePrompt();
@@ -52,7 +72,7 @@ public class MyPrompt {
     return result.getSelectedId();
   }
 
-  public static HashSet<String> selectMultiple(String message, String... options)
+  public static HashSet<String> selectMultiple(String message, List<String> options)
       throws IOException {
     final var name = "name";
 

@@ -260,7 +260,8 @@
       <property name="arrayInitIndent" value="2"/>
     </module>
     <module name="AbbreviationAsWordInName">
-      <property name="ignoreFinal" value="false"/>
+      <!-- <property name="ignoreFinal" value="false"/> -->
+      <property name="ignoreFinal" value="true"/>
       <property name="allowedAbbreviationLength" value="0"/>
       <property name="tokens"
                value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF,
