@@ -5,6 +5,7 @@
   - エディタの設定が有効になっていること確かめる
     - 拡張機能が有効になっていること確かめる
   - Linter, Formatter が有効になっていることを確かめる
+    - 英語
 
 ## 02.input-output-app
 - Input / Output
@@ -15,3 +16,10 @@
   - Linter, Formatter が有効になっていることを確かめる
 
 - JAVA PROJECTS > Project and External Dependecies が空だったら ･･･ > Clean Workspace
+
+## 03.file-save-app
+- File read/write
+  - 例外
+  - 相対パスと絶対パス
+  - try-with-resources
+  - java.nio / java.io
