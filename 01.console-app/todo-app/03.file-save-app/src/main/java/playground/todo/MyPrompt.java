@@ -1,7 +1,7 @@
 package playground.todo;
 
 import java.io.IOException;
-import java.util.HashSet;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import de.codeshelf.consoleui.elements.ConfirmChoice;
@@ -52,7 +52,17 @@ public class MyPrompt {
     return result.getInput();
   }
 
-  public static String select(String message, List<String> options) throws IOException {
+  public static int selectFromTodo(String message, List<Todo> options) throws IOException {
+    var formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    return select(message, options.stream()
+        .map(option -> option.yarukoto
+            + (option.datetime != null
+                ? " <- " + option.datetime.format(formatter)
+                : ""))
+        .toList());
+  }
+
+  public static int select(String message, List<String> options) throws IOException {
     final var name = "name";
 
     ConsolePrompt prompt = new ConsolePrompt();
@@ -62,17 +72,18 @@ public class MyPrompt {
         .name(name)
         .message(message);
 
-    for (var option : options) {
-      builder.newItem().text(option).add();
+    for (int i = 0; i < options.size(); i++) {
+      var option = options.get(i);
+      builder.newItem(String.valueOf(i)).text(option).add();
     }
 
     var map = prompt.prompt(builder.addPrompt().build());
     var result = (ListResult) map.get(name);
 
-    return result.getSelectedId();
+    return Integer.parseInt(result.getSelectedId());
   }
 
-  public static HashSet<String> selectMultiple(String message, List<String> options)
+  public static List<Integer> selectMultiple(String message, List<String> options)
       throws IOException {
     final var name = "name";
 
@@ -83,14 +94,15 @@ public class MyPrompt {
         .name(name)
         .message(message);
 
-    for (var option : options) {
-      builder.newItem().text(option).add();
+    for (int i = 0; i < options.size(); i++) {
+      var option = options.get(i);
+      builder.newItem(String.valueOf(i)).text(option).add();
     }
 
     var map = prompt.prompt(builder.addPrompt().build());
     var result = (CheckboxResult) map.get(name);
 
-    return result.getSelectedIds();
+    return result.getSelectedIds().stream().map(Integer::parseInt).toList();
   }
 
   public static ConfirmChoice.ConfirmationValue confirm(

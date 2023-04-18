@@ -3,9 +3,9 @@ package playground.todo;
 import static org.fusesource.jansi.Ansi.ansi;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import org.fusesource.jansi.AnsiConsole;
 
@@ -23,14 +23,14 @@ public class App {
         .a("Welcome back!")
         .reset());
 
-    List<String> todoList = TodoList.load();
+    List<Todo> todoList = TodoList.load();
 
     for (;;) {
       // メニュー表示
-      List<String> menu = new ArrayList<>();
+      List<Todo> menu = new ArrayList<>();
       menu.addAll(todoList);
-      menu.add(ADD_TODO);
-      final var select = MyPrompt.select(
+      menu.add(new Todo(ADD_TODO, null));
+      final var selectIndex = MyPrompt.selectFromTodo(
           ansi()
               .a("You have ")
               .fgCyan()
@@ -42,10 +42,9 @@ public class App {
           menu);
 
       // 追加
-      if (Objects.equals(select, ADD_TODO)) {
+      if (selectIndex == menu.size() - 1) {
         final var newTodo = MyPrompt.input("Enter your todo.");
-        todoList.add(newTodo);
-        TodoList.save(todoList);
+
         System.out.println(ansi()
             .fgGreen()
             .a("  => ")
@@ -53,6 +52,9 @@ public class App {
             .reset()
             .a(String.format("(%s)", newTodo))
             .reset());
+
+        todoList.add(new Todo(newTodo, LocalDateTime.now()));
+        TodoList.save(todoList);
 
         // 完了
       } else if (MyPrompt.confirm(
@@ -70,30 +72,40 @@ public class App {
               .a(", I want to edit.")
               .reset().toString(),
           ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
-        todoList.remove(select);
-        TodoList.save(todoList);
         System.out.println(ansi()
             .fgGreen()
             .a("  => ")
             .a("DONE!🎉 ")
             .reset()
-            .a(String.format("(%s)", select))
+            .a(String.format("(%s)", selectIndex))
             .reset());
+
+        todoList.remove(selectIndex);
+        TodoList.save(todoList);
 
         // 編集
       } else {
-        final var newTodo = MyPrompt.input("Edit your todo.", select);
-        todoList.replaceAll(todo -> Objects.equals(todo, select) ? newTodo : todo);
-        TodoList.save(todoList);
+        var todo = todoList.get(selectIndex);
+        final var yarukoto = MyPrompt.input("Edit your todo.", todo.yarukoto);
+
         System.out.println(ansi()
             .fgGreen()
             .a("  => ")
             .a("EDITED. ")
             .reset()
-            .a(String.format("(%s -> %s)", select, newTodo))
+            .a(String.format("(%s -> %s)", todo.yarukoto, yarukoto))
             .reset());
 
+        todo.yarukoto = yarukoto;
+        TodoList.save(todoList);
+
       }
+
+      for (int i = 0; i < 5; i++) {
+        Thread.sleep(100);
+        System.out.print(".");
+      }
+      System.out.println();
     }
   }
 }
