@@ -3,8 +3,16 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[scripts]
+serve = "mkdocs serve"
+build = "mkdocs build"
+deploy = "mkdocs gh-deploy"
+
 [packages]
 mkdocs = "1.4.3"
+mkdocs-material = "9.1.11"
+mkdocs-material-extensions = "1.1.1"
+pymdown-extensions = "9.11"
 
 [dev-packages]
 
