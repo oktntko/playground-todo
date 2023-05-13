@@ -1,0 +1,18 @@
+version: "3"
+services:
+  database:
+    container_name: playground-todo-database
+    image: postgres:15.2
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_PASSWORD: todo
+      POSTGRES_USER: todo
+      POSTGRES_DB: todo
+      TZ: "Asia/Tokyo"
+    restart: on-failure
+    volumes:
+      - playground-todo-volume:/var/lib/postgresql/data
+
+volumes:
+  playground-todo-volume:
