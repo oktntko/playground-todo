@@ -11,10 +11,13 @@ import java.util.List;
 import org.fusesource.jansi.AnsiConsole;
 
 import de.codeshelf.consoleui.elements.ConfirmChoice;
+import kong.unirest.GenericType;
+import kong.unirest.Unirest;
 
 public class App {
 
   public static final String ADD_TODO = "＋ADD TODO";
+  public static final String BASE_URL = "http://localhost:8080";
 
   public static void main(String[] args) throws InterruptedException, IOException, SQLException {
     AnsiConsole.systemInstall();
@@ -24,7 +27,11 @@ public class App {
         .a("Welcome back!")
         .reset());
 
-    List<Todo> todoList = DataSource.load();
+    List<Todo> todoList = Unirest.get(BASE_URL + "/api/todo")
+        .header("Content-Type", "application/json")
+        .asObject(new GenericType<List<Todo>>() {
+        })
+        .getBody();
 
     for (;;) {
       // メニュー表示
@@ -56,7 +63,11 @@ public class App {
 
         var todo = new Todo(null, newTodo, LocalDateTime.now());
         todoList.add(todo);
-        DataSource.insert(todo);
+
+        Unirest.post(BASE_URL + "/api/todo")
+            .header("Content-Type", "application/json")
+            .body(todo)
+            .asJson();
 
         // 完了
       } else if (MyPrompt.confirm(
@@ -83,7 +94,11 @@ public class App {
             .reset());
 
         var todo = todoList.remove(selectIndex);
-        DataSource.delete(todo);
+
+        Unirest.delete(BASE_URL + "/api/todo")
+            .header("Content-Type", "application/json")
+            .body(todo)
+            .asJson();
 
         // 編集
       } else {
@@ -99,7 +114,11 @@ public class App {
             .reset());
 
         todo.yarukoto = yarukoto;
-        DataSource.update(todo);
+
+        Unirest.put(BASE_URL + "/api/todo")
+            .header("Content-Type", "application/json")
+            .body(todo)
+            .asJson();
 
       }
 
