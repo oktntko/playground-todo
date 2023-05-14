@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import axios from "axios";
+import { reactive } from "vue";
 import { onMounted } from "vue";
 
 type Todo = {
@@ -8,14 +9,28 @@ type Todo = {
   datetime: Date;
 };
 
+const data = reactive<{ todoList: Todo[] }>({
+  todoList: [],
+});
+
 onMounted(async () => {
   const res = await axios.get<Todo[]>("/api/todo");
 
   console.log(res);
   console.log(res.data);
+  data.todoList = res.data;
 });
 </script>
 
 <template>
   <div>Hello World!</div>
+  <div v-for="todo of data.todoList" :key="todo.id">
+    |
+    <span>{{ todo.id }}</span>
+    |
+    <span>{{ todo.yarukoto }}</span>
+    |
+    <span>{{ todo.datetime }}</span>
+    |
+  </div>
 </template>
