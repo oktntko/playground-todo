@@ -70,7 +70,9 @@
 ### 自己学習に役立つサイト
 
 1. [Progate](https://prog-8.com/)では、開発環境の構築なしにプログラミング言語を学ぶことができます。
-2. [サル先生の Git 入門](https://backlog.com/ja/git-tutorial/)では、はじめから丁寧にわかりやすく説明してくれています。
+2. [サル先生の Git 入門](https://backlog.com/ja/git-tutorial/)では、Git をはじめから丁寧にわかりやすく説明してくれています。
+3. [ウェブ入門](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web) (Guide/Learn)でステップアップしながら全体的に、(References/Docs)で詳細にウェブの技術が学べます。
+4. [Tutorial | Vue.js](https://ja.vuejs.org/tutorial/)では、Vue.js をはじめから丁寧にわかりやすく説明してくれています。
 
 ### 参考にしたサイト
 
