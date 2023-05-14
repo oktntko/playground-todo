@@ -33,5 +33,5 @@ onMounted(async () => {
     <span>{{ todo.datetime }}</span>
     |
   </div>
-  <button type="button">追加</button>
+  <RouterLink to="/add"><button type="button">追加</button></RouterLink>
 </template>
