@@ -20,6 +20,14 @@ onMounted(async () => {
   console.log(res.data);
   data.todoList = res.data;
 });
+
+async function handleDone(id: number) {
+  if (window.confirm("完了しますか？")) {
+    await axios.delete(`/api/todo/${id}`);
+    window.alert("完了しました！");
+    data.todoList = data.todoList.filter((todo) => todo.id != id);
+  }
+}
 </script>
 
 <template>
@@ -33,6 +41,8 @@ onMounted(async () => {
     <span>{{ todo.datetime }}</span>
     |
     <RouterLink :to="`/edit/${todo.id}`">編集</RouterLink>
+    |
+    <button type="button" @click="handleDone(todo.id)">完了</button>
   </div>
   <RouterLink to="/add"><button type="button">追加</button></RouterLink>
 </template>
