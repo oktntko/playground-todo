@@ -32,6 +32,7 @@ onMounted(async () => {
     |
     <span>{{ todo.datetime }}</span>
     |
+    <RouterLink :to="`/edit/${todo.id}`">編集</RouterLink>
   </div>
   <RouterLink to="/add"><button type="button">追加</button></RouterLink>
 </template>
