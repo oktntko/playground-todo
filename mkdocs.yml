@@ -4,18 +4,19 @@ repo_url: https://github.com/oktntko/playground-todo
 nav:
   - はじめに: index.md
   - とにかく動かしてみよう:
-      - Windows の設定を確認しよう: step01/windows.md
-      - 開発ツールをインストールしよう: step01/tools.md
-      - 開発環境を作ろう: step01/env.md
-      - プロジェクトを作ろう: step01/project.md
-  - コンソールで動かそう: index.md
-  - ウェブシステム化しよう: index.md
-  - ウェブ画面を作ろう: index.md
-  - 仕様書を書こう: index.md
-  - 試験をしよう: index.md
-  - 仕様変更をしよう: index.md
-  - デプロイしてみよう: index.md
-  - 振り返り＆今後: index.md
+      - いいパソコンを買おう: lets-try-anyway/pc.md
+      - Windows の設定を確認しよう: lets-try-anyway/windows.md
+      - 開発ツールをインストールしよう: lets-try-anyway/tools.md
+      - 開発環境を作ろう: lets-try-anyway/env.md
+      - プロジェクトを作ろう: lets-try-anyway/project.md
+  - コンソールで動かそう: mock.md
+  - ウェブシステム化しよう: mock.md
+  - ウェブ画面を作ろう: mock.md
+  - 仕様書を書こう: mock.md
+  - 試験をしよう: mock.md
+  - 仕様変更をしよう: mock.md
+  - デプロイしてみよう: mock.md
+  - 振り返り＆今後: mock.md
 
 theme:
   name: material
@@ -52,3 +53,5 @@ markdown_extensions:
   - footnotes # 注釈
   - toc:
       permalink: True
+  - mdx_truly_sane_lists: # スペース2個のインデントをリストのネストとして認識させたい https://stakiran.hatenablog.com/entry/2018/08/02/202816
+      nested_indent: 2

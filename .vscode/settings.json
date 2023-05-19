@@ -1,6 +1,7 @@
 {
   "[markdown]": {
     "files.trimTrailingWhitespace": false,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
   },
   "editor.formatOnSave": true,
   "editor.rulers": [100],
