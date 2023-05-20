@@ -1,0 +1,31 @@
+# require("@rushstack/eslint-patch/modern-module-resolution");
+root: true
+extends:
+  - "plugin:vue/vue3-recommended"
+  - "eslint:recommended"
+  - "plugin:@typescript-eslint/recommended"
+  - "@vue/eslint-config-typescript"
+  - "@vue/eslint-config-prettier/skip-formatting"
+parser: "vue-eslint-parser"
+parserOptions:
+  parser: "@typescript-eslint/parser"
+  sourceType: module
+  ecmaVersion: "latest"
+plugins:
+  - "vue"
+rules:
+  "vue/multi-word-component-names": "off"
+  "@typescript-eslint/ban-ts-comment": "off"
+  "vue/component-tags-order":
+    - "error"
+    - "order":
+        - "script"
+        - "template"
+        - "style"
+  "vue/prop-name-casing": "off"
+  "@typescript-eslint/no-unused-vars":
+    - warn
+    - argsIgnorePattern: "^_"
+      varsIgnorePattern: "^_"
+      caughtErrorsIgnorePattern: "^_"
+  "@typescript-eslint/no-empty-interface": "off"
