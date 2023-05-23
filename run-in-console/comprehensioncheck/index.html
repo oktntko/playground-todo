@@ -1,0 +1,1868 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../lets-try-anyway/project/">
+      
+      
+        <link rel="next" href="../mock/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>理解度を確認しよう - Playground Todo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Playground Todo" class="md-header__button md-logo" aria-label="Playground Todo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Playground Todo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              理解度を確認しよう
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oktntko/playground-todo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Playground Todo" class="md-nav__button md-logo" aria-label="Playground Todo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Playground Todo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oktntko/playground-todo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        はじめに
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          とにかく動かしてみよう
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          とにかく動かしてみよう
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/pc/" class="md-nav__link">
+        いいパソコンを買おう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/windows/" class="md-nav__link">
+        Windows の設定を確認しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/tools/" class="md-nav__link">
+        開発ツールをインストールしよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/env/" class="md-nav__link">
+        開発環境を作ろう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/project/" class="md-nav__link">
+        プロジェクトを作ろう
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          コンソールで動かそう
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          コンソールで動かそう
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          理解度を確認しよう
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        理解度を確認しよう
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fizzbuzz" class="md-nav__link">
+    FizzBuzz問題
+  </a>
+  
+    <nav class="md-nav" aria-label="FizzBuzz問題">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    ❔ 問題 (目標⏰: 10分)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    🙋 解説
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anagram" class="md-nav__link">
+    アナグラム(anagram)
+  </a>
+  
+    <nav class="md-nav" aria-label="アナグラム(anagram)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    ❔ 問題 (目標⏰: 20分)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    🙋 解説
+  </a>
+  
+    <nav class="md-nav" aria-label="🙋 解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    💡 ゴールまでの筋道を立てる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    💡 筋道をコードに書き起こす
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    💡 動きを確認する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    💡 見た目を整える
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    厄年計算
+  </a>
+  
+    <nav class="md-nav" aria-label="厄年計算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30" class="md-nav__link">
+    ❔ 問題 (目標⏰: 30分)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    🙋 解説
+  </a>
+  
+    <nav class="md-nav" aria-label="🙋 解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    💡 ゴールまでの筋道を立ててコードに書いて動きを確認して見た目を整える
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    💡 入力パターンを考える
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mock/" class="md-nav__link">
+        今これからどんなものを作るの？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mock/" class="md-nav__link">
+        対話型アプリをコンソールで作ろう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mock/" class="md-nav__link">
+        ToDoをアプリに保存しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mock/" class="md-nav__link">
+        データベースの基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mock/" class="md-nav__link">
+        ToDoをデータベースに保存しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mock/" class="md-nav__link">
+        見た目にこだわろう
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        ウェブシステム化しよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        ウェブ画面を作ろう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        仕様書を書こう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        試験をしよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        仕様変更をしよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        デプロイしてみよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        振り返り＆今後
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fizzbuzz" class="md-nav__link">
+    FizzBuzz問題
+  </a>
+  
+    <nav class="md-nav" aria-label="FizzBuzz問題">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    ❔ 問題 (目標⏰: 10分)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    🙋 解説
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anagram" class="md-nav__link">
+    アナグラム(anagram)
+  </a>
+  
+    <nav class="md-nav" aria-label="アナグラム(anagram)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    ❔ 問題 (目標⏰: 20分)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    🙋 解説
+  </a>
+  
+    <nav class="md-nav" aria-label="🙋 解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    💡 ゴールまでの筋道を立てる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    💡 筋道をコードに書き起こす
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    💡 動きを確認する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    💡 見た目を整える
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    厄年計算
+  </a>
+  
+    <nav class="md-nav" aria-label="厄年計算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30" class="md-nav__link">
+    ❔ 問題 (目標⏰: 30分)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    🙋 解説
+  </a>
+  
+    <nav class="md-nav" aria-label="🙋 解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    💡 ゴールまでの筋道を立ててコードに書いて動きを確認して見た目を整える
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    💡 入力パターンを考える
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">理解度を確認しよう<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>意図通りであることを前提として</p>
+<ul>
+<li>早いこと<ul>
+<li>完成までが早い、処理が終わるまでが早い、</li>
+</ul>
+</li>
+<li>分かりやすいこと（想定する相手に）<ul>
+<li>...</li>
+</ul>
+</li>
+<li>???<ul>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<h2 id="fizzbuzz">FizzBuzz問題<a class="headerlink" href="#fizzbuzz" title="Permanent link">&para;</a></h2>
+<h3 id="10">❔ 問題 (目標⏰: 10分)<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<p>1 から 30 までの数を順番に出力すること。<br />
+ただし、以下のルールを満たすこと。</p>
+<ul>
+<li>数が 3 の倍数の時はFizzと出力すること</li>
+<li>数が 5 の倍数の時はBuzzと出力すること</li>
+<li>数が 3 の倍数かつ 5 の倍数の時はFizzBuzzと出力すること</li>
+</ul>
+<details>
+<summary>🖨️ 出力結果</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="m">1</span>
+<span class="m">2</span>
+Fizz
+<span class="m">4</span>
+Buzz
+Fizz
+<span class="m">7</span>
+<span class="m">8</span>
+Fizz
+Buzz
+<span class="m">11</span>
+Fizz
+<span class="m">13</span>
+<span class="m">14</span>
+FizzBuzz
+<span class="m">16</span>
+<span class="m">17</span>
+Fizz
+<span class="m">19</span>
+Buzz
+Fizz
+<span class="m">22</span>
+<span class="m">23</span>
+Fizz
+Buzz
+<span class="m">26</span>
+Fizz
+<span class="m">28</span>
+<span class="m">29</span>
+FizzBuzz
+</code></pre></div></td></tr></table></div>
+</details>
+<details>
+<summary>🔰 ベースコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FizzBuzzApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">playground.todo</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FizzBuzzApp</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;fizzbuzz&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details>
+<summary>▶️ 実行方法</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/my-todo/todo-app
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/FizzBuzzApp.java
+fizzbuzz
+</code></pre></div></td></tr></table></div>
+<p>※ターミナルから実行する場合</p>
+</details>
+<h3 id="_2">🙋 解説<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>まずは、<strong>1 から 30 までの数を順番に出力しましょう。</strong>基本中の基本、<code>for</code>文を使います。</p>
+<details>
+<summary>🚫 サンプルコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FizzBuzzApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span><span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>次に、<strong>「 n の倍数のとき」をプログラムで書き表せる言葉に翻訳します。</strong>
+「 n の倍数のとき」を翻訳すると、「 n で割り切れるとき」になります。</p>
+<p>では、「 n で割り切れるとき」をプログラム言語で書くとどうなるでしょうか？もう少し翻訳が必要ですね。
+「 n で割り切れるとき」をさらに翻訳すると、<strong>①「 n で割ったときの余りが 0 」</strong> <strong>②「のとき」</strong>になります。</p>
+<p>①「 n で割ったときの余りが 0 」という表現は、算術演算子「<code>A % B</code>（AをBで割った余り）」と、比較演算子「<code>==</code>（一致する）」と相性が良くなりました。<br />
+②「のとき」は<code>if</code>文を使えばいいですね。  </p>
+<p>では、コードに書いてみましょう。</p>
+<details>
+<summary>🚫 サンプルコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FizzBuzzApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fizz&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Buzz&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;FizzBuzz&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="hll"><span class="w">      </span><span class="p">}</span>
+</span><span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>ここまでかけたら、実際に動かして確認してみましょう。</p>
+<hr />
+<p>15 と 30 が <code>FizzBuzz</code>にならずに、<code>Fizz</code>になってしまいます。
+問題文が少し意地悪で、問題文の通りに<code>if</code>文を書くと、期待通りに動きません。
+<strong>プログラムは上から順場に処理する</strong>ので、 15 が「 3 の倍数である」という条件に引っ掛かり、
+<code>Fizz</code>が出力されます。なので、評価する順番を直しましょう。</p>
+<hr />
+<p>完成したものがこちら。</p>
+<details>
+<summary>🚫 サンプルコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FizzBuzzApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;FizzBuzz&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fizz&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Buzz&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="anagram">アナグラム(anagram)<a class="headerlink" href="#anagram" title="Permanent link">&para;</a></h2>
+<h3 id="20">❔ 問題 (目標⏰: 20分)<a class="headerlink" href="#20" title="Permanent link">&para;</a></h3>
+<p>二つの文字列が同じ文字から構成されるかどうか判断し、同じなら<code>true</code>を違うなら<code>false</code>を出力すること。<br />
+ただし、以下のルールを満たすこと。</p>
+<ul>
+<li>半角スペースは二つの文字列からは無視すること。</li>
+<li>アルファベットの大文字小文字の違いは無視すること。</li>
+</ul>
+<details>
+<summary>🖨️ 出力結果</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;Statue of Liberty&quot;</span><span class="w"> </span><span class="s2">&quot;built to stay free&quot;</span>
+<span class="nb">true</span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;anagrams&quot;</span><span class="w"> </span><span class="s2">&quot;ARS MAGNA&quot;</span>
+<span class="nb">true</span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;どいとうかつき&quot;</span><span class="w"> </span><span class="s2">&quot;かいとうきつど&quot;</span>
+<span class="nb">true</span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;古川大&quot;</span><span class="w"> </span><span class="s2">&quot;叶才三&quot;</span>
+<span class="nb">false</span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;tokiwa kanenari&quot;</span><span class="w"> </span><span class="s2">&quot;wakita kanenori&quot;</span>
+<span class="nb">true</span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;水無 怜奈&quot;</span><span class="w"> </span><span class="s2">&quot;Ms.007&quot;</span>
+<span class="nb">false</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details>
+<summary>🔰 ベースコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AnagramApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">playground.todo</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AnagramApp</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details>
+<summary>▶️ 実行方法</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/my-todo/todo-app
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="s2">&quot;b&quot;</span>
+a
+b
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java
+引数に２つの文字を入力してください。
+</code></pre></div></td></tr></table></div>
+<p>※ターミナルから実行する場合</p>
+</details>
+<h3 id="_3">🙋 解説<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>時間内にゴールにたどり着けたでしょうか？
+時間内にゴールまでたどり着けなかったとしたら、重要なのは、<strong>なぜ時間内にゴールまでたどり着けなかったのか？を分析すること</strong>です。  </p>
+<p>実際の業務では、先輩からやり方を押してもらったり、作業自体を変わってもらったりすることがあると思います。
+自分でできなかったからダメとか、やり方を教えてもらって答えが分かってよかったとか、かわりの誰かが問題が解決してくれてよかったで終わりではありません。</p>
+<p>「なぜできなかったのか？」を考えることで、「できなかったこと」が</p>
+<ul>
+<li>自分に今何が足りていないか</li>
+<li>何を身に着ける必要があるか？</li>
+</ul>
+<p>を教えてくれます。その小さな分析の積み重ねが、「できなかったこと」を「できること」に変えていくのです。</p>
+<p>それでは解説をしていきましょう。</p>
+<h4 id="_4">💡 ゴールまでの筋道を立てる<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>まず、<strong>いきなりコードを書き始めるのではなく、ゴールまでの筋道を立てましょう。</strong></p>
+<p>例えば、こんな感じ</p>
+<ol>
+<li>半角スペース を取り除く<ul>
+<li>a: <code>"Statue of Liberty"</code> =&gt; <code>"StatueofLiberty"</code></li>
+<li>b: <code>"built to stay free"</code> =&gt; <code>"builttostayfree"</code></li>
+</ul>
+</li>
+<li>アルファベットの大文字をすべて小文字に変換する<ul>
+<li>a: <code>"StatueofLiberty"</code> =&gt; <code>"statueofliberty"</code></li>
+<li>b: <code>"builttostayfree"</code> =&gt; <code>"builttostayfree"</code></li>
+</ul>
+</li>
+<li>文字列を一定のルールで並び替える<ul>
+<li>a: <code>"statueofliberty"</code> =&gt; <code>"abeefilorstttuy"</code></li>
+<li>b: <code>"builttostayfree"</code> =&gt; <code>"abeefilorstttuy"</code></li>
+</ul>
+</li>
+<li>文字列を比較する</li>
+</ol>
+<p>どうすれば「二つの文字列が同じ文字から構成されるかどうか判断」できるか？
+を考えずにやり方を探すと（『文字列 一致』などの検索ワードで調べてしまうと）</p>
+<blockquote>
+<p>文字列は "==" ではなく "equals" を使って比較しろ  </p>
+</blockquote>
+<p>なんていう結果しか返ってきません。</p>
+<p>ゴールまでの筋道が整理できなかった（もしくは今後の課題で、ここで詰まる傾向が自分に見られる）場合、
+ロジカルに物事を考える能力・整理する能力が不足しています。</p>
+<h4 id="_5">💡 筋道をコードに書き起こす<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>筋道を考えられれば、あとは<strong>それ（自然言語）をプログラミング言語に翻訳していく</strong>だけです。</p>
+<ol>
+<li>『java 半角スペース 取り除く』で検索すれば…<ul>
+<li><code>String#trim</code> や <code>String#replaceAll(" ", "")</code> が見つかるはず</li>
+</ul>
+</li>
+<li>『java 大文字 小文字 変換』で検索すれば…<ul>
+<li><code>String#toLowerCase</code> が見つかるはず</li>
+<li>ついでに、 <code>String#toUpperCase</code> も見つかるはず</li>
+</ul>
+</li>
+</ol>
+<details>
+<summary>🚫 サンプルコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AnagramApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+
+<span class="hll"><span class="w">    </span><span class="c1">// 1. 半角スペース を取り除く</span>
+</span><span class="hll"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// 2. アルファベットの大文字をすべて小文字に変換する</span>
+</span><span class="hll"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>
+</span><span class="hll"><span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// 3. 文字列を一定のルールで並び替える</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// 4. 文字列を比較する</span>
+</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>「文字を一定のルールで並び替える」はどうでしょうか？
+これを１行でコードに書き表す方法はなかなか見つからないです。</p>
+<p>そこでまた、<strong>ゴールまでの筋道を立て</strong>ましょう。</p>
+<ul>
+<li>文字を一定のルールで並び替える<ol>
+<li>文字列を１文字ずつに分割する</li>
+<li>１文字ずつを並び替える</li>
+<li>分割して並び替えた文字を結合する</li>
+</ol>
+</li>
+</ul>
+<p>このように小さい処理に分解していくことで、知らないことも調べやすくなります。</p>
+<ol>
+<li>『java 文字列 １文字 分割』で検索すれば…<ul>
+<li><code>String#split("")</code> が見つかるはず</li>
+</ul>
+</li>
+<li>『java 文字列 配列 並び替え』で検索すれば…<ul>
+<li><code>Collections#sort</code> や <code>Arrays#sort</code> が見つかるはず</li>
+</ul>
+</li>
+<li>『java 文字列 配列 結合』で検索すれば…<ul>
+<li><code>StringJoiner</code> や <code>String#join</code> が見つかるはず</li>
+</ul>
+</li>
+</ol>
+<details>
+<summary>🚫 サンプルコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AnagramApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 1. 半角スペース を取り除く</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// 2. アルファベットの大文字をすべて小文字に変換する</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// 3. 文字列を一定のルールで並び替える</span>
+<span class="hll"><span class="w">    </span><span class="c1">// - 3.1. 文字列を１文字ずつに分割する</span>
+</span><span class="hll"><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">aarray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">barray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// - 3.2. 並び替える</span>
+</span><span class="hll"><span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">aarray</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">barray</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// - 3.3. 分割して並び替えた文字を結合する</span>
+</span><span class="hll"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">aarray</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">barray</span><span class="p">);</span>
+</span>
+<span class="w">    </span><span class="c1">// 4. 文字列を比較する</span>
+<span class="hll"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+</span><span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h4 id="_6">💡 動きを確認する<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>コードが書けたら必ず動きを確認しましょう。すべて書けてからではなく、期待通りに動いているか？を都度確認しましょう。
+はじめて<code>replaceAll</code>を使うならその時に。
+はじめて<code>toLowerCase</code>を使うならその時に。</p>
+<p>なぜプログラミング言語の学習は「Hello World」から始まるのか？<br />
+それは、動きを確認するために、結果を出力する方法を学ぶのが最優先だからです。</p>
+<h4 id="_7">💡 見た目を整える<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>期待通りに動くことを確認したら、見た目を整えましょう。プロとして、期待通りに動くことは最低条件です。
+見た目を整えることで、分かりやすくしましょう。</p>
+<p>今回、変数<code>a</code>と<code>b</code>に対して同じ処理（文字列を一定のルールで整形すること）を実行しています。
+かつ、<strong>同じ処理を実行する必要があります。</strong>
+例えば、変数<code>a</code>はスペースを取り除くけど、変数<code>b</code>は取り除かなかった場合、
+入力する順番を変えるだけで、異なる結果が返ってきてしまいます。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;ARS MAGNA&quot;</span><span class="w"> </span><span class="s2">&quot;anagrams&quot;</span>
+<span class="nb">true</span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/AnagramApp.java<span class="w"> </span><span class="s2">&quot;anagrams&quot;</span><span class="w"> </span><span class="s2">&quot;ARS MAGNA&quot;</span>
+<span class="nb">false</span><span class="w"> </span><span class="c1"># &quot;(-&quot;&quot;-)&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>同じ処理をすべき場合、同じ処理にします。これを共通化といいます。
+同じ処理を１つの関数（メソッド）にしてしまうことで実現できます。</p>
+<details>
+<summary>🚫 サンプルコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AnagramApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnagramApp</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnagramApp</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="hll"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="c1">// 1. 半角スペース を取り除く</span>
+</span><span class="hll"><span class="w">    </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// 2. アルファベットの大文字をすべて小文字に変換する</span>
+</span><span class="hll"><span class="w">    </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// 3. 文字列を一定のルールで並び替える</span>
+</span><span class="hll"><span class="w">    </span><span class="c1">// - 3.1. 文字列を１文字ずつに分割する</span>
+</span><span class="hll"><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// - 3.2. 並び替える</span>
+</span><span class="hll"><span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// - 3.3. 分割して並び替えた文字を結合する</span>
+</span><span class="hll"><span class="w">    </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">str</span><span class="p">;</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
+<p>見た目を整えたら、再度動きを確認して完成です。</p>
+<h2 id="_8">厄年計算<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="30">❔ 問題 (目標⏰: 30分)<a class="headerlink" href="#30" title="Permanent link">&para;</a></h3>
+<p>※ここで取り扱う日付はすべて西暦とする。<br />
+「生年月日」と「性別」の二つの入力値から、厄年を出力するプログラムを作ること。</p>
+<ul>
+<li>出力するのは本厄の年のみとすること。本厄は男性が数え年で4歳、25歳、42歳、61歳、女性が19歳、33歳、37歳、61歳のときとする。<ul>
+<li>※諸説あり。</li>
+</ul>
+</li>
+<li>数え年は、生まれた時点で1歳とし、1月1日を迎えるたびに1歳ずつ加えていくこととする。<ul>
+<li>※諸説あり。</li>
+</ul>
+</li>
+</ul>
+<details>
+<summary>🖨️ 出力結果</summary>
+<p>WEB上の厄年計算サイトを参考にしましょう。</p>
+</details>
+<details>
+<summary>🔰 ベースコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CalcYakudosiApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">playground.todo</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CalcYakudosiApp</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details>
+<summary>▶️ 実行方法</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/my-todo/todo-app
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="s2">&quot;b&quot;</span>
+a
+b
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java
+引数に２つの文字を入力してください。
+</code></pre></div></td></tr></table></div>
+<p>※ターミナルから実行する場合</p>
+</details>
+<h3 id="_9">🙋 解説<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h4 id="_10">💡 ゴールまでの筋道を立ててコードに書いて動きを確認して見た目を整える<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>これもいきなりコードを書き始めるのではなく、ゴールまでの筋道を考えましょう。
+しかし、日付の計算は頭がこんがらがりやすいです。さらに、「数え年」なる聞きなれない言葉も出てきました。</p>
+<p>こういうときは、<strong>サンプルデータを使って考えましょう。</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生年月日</td>
+<td>1999-12-12</td>
+</tr>
+<tr>
+<td>性別</td>
+<td>男</td>
+</tr>
+</tbody>
+</table>
+<p>この人はいつ厄年になるでしょうか？地道にみていきます。</p>
+<table>
+<thead>
+<tr>
+<th align="right">年齢</th>
+<th>年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1 歳</td>
+<td>1999 年</td>
+</tr>
+<tr>
+<td align="right">4 歳</td>
+<td>2002 年</td>
+</tr>
+<tr>
+<td align="right">25 歳</td>
+<td>2023 年</td>
+</tr>
+<tr>
+<td align="right">42 歳</td>
+<td>2040 年</td>
+</tr>
+<tr>
+<td align="right">61 歳</td>
+<td>2059 年</td>
+</tr>
+</tbody>
+</table>
+<p>年齢の差分年が増えていっているだけですね。<strong>「数え年」は起点を１歳とするかどうか</strong>で、<strong>生年月日は年の部分だけが重要</strong>であることが分かりました。
+性別が女だったとしたらどうでしょうか？</p>
+<table>
+<thead>
+<tr>
+<th align="right">年齢</th>
+<th>年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1 歳</td>
+<td>1999 年</td>
+</tr>
+<tr>
+<td align="right">19 歳</td>
+<td>2017 年</td>
+</tr>
+<tr>
+<td align="right">33 歳</td>
+<td>2031 年</td>
+</tr>
+<tr>
+<td align="right">37 歳</td>
+<td>2035 年</td>
+</tr>
+<tr>
+<td align="right">61 歳</td>
+<td>2059 年</td>
+</tr>
+</tbody>
+</table>
+<p>加算する数字が違うだけですね。
+これでゴールまでの筋道が立てられそうです。</p>
+<ol>
+<li>「生年月日」から「年」を数値として抽出する＝<code>生年</code>とする</li>
+<li>性別によって加算するデータを切り替える＝<code>厄年齢リスト</code>とする</li>
+<li><code>厄年齢リスト</code>を繰り返し処理する＝一つのデータは<code>厄年齢</code>とする<ul>
+<li><code>生年</code>＋<code>厄年齢</code>－１を出力する</li>
+</ul>
+</li>
+</ol>
+<p>変数名まで決められました。また、表を使って考えたことで、これをそのまま出力結果にするアイディアも生まれました。</p>
+<p>あとはアナグラムのときと同様に、プログラミング言語に翻訳していきます。
+言語仕様が分からないところは検索していきます。</p>
+<details>
+<summary>🚫 サンプルコード</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CalcYakudosiApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">生年月日</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">性別</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="c1">// https://docs.oracle.com/javase/jp/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_DATE</span>
+</span><span class="hll"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="n">生年月日</span><span class="p">,</span><span class="w"> </span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ISO_LOCAL_DATE</span><span class="p">).</span><span class="na">getYear</span><span class="p">();</span><span class="w"> </span><span class="c1">// yyyy-MM-dd</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">return厄年齢リスト</span><span class="p">(</span><span class="n">性別</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+</span><span class="hll"><span class="w">          </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%2s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">厄年齢</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 歳 : &quot;</span>
+</span><span class="hll"><span class="w">              </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">生年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 年&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">return厄年齢リスト</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">性別</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">性別</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;男&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span><span class="w"> </span><span class="c1">// 男性</span>
+</span><span class="hll"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span><span class="w"> </span><span class="c1">// 女性</span>
+</span><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>ちょっと解説。</p>
+<p>日付を扱うのに<code>LocalDate</code>クラスを使いました。<code>LocalDate</code>はJava8から生まれたクラスです。
+既存の<code>Date</code>や<code>Calendar</code>の使いづらいところを解決するために爆誕しました。
+が、どのクラスを使うかは重要ではありません。ここで押さえておいてほしかったのは、次の２点です。</p>
+<ol>
+<li>どのクラスを使っても日付を扱うのは面倒だということ</li>
+<li>日付のフォーマットはいろんなものがあるといこと</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="c1">// https://docs.oracle.com/javase/jp/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_DATE</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="n">生年月日</span><span class="p">,</span><span class="w"> </span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ISO_LOCAL_DATE</span><span class="p">).</span><span class="na">getYear</span><span class="p">();</span><span class="w"> </span><span class="c1">// yyyy-MM-dd</span>
+</code></pre></div></td></tr></table></div>
+<p>次のループ処理を共通化するために厄年齢リストを決める処理を関数化しています。見た目を整えていますね。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">return厄年齢リスト</span><span class="p">(</span><span class="n">性別</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p><code>String#format</code>で年齢をスペースで埋めて、「4 歳」を表示するときにずれないようにしています。見た目を整えていますね。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">          </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%2s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">厄年齢</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 歳 : &quot;</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details>
+<summary>🖨️ 出力結果</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span>
+<span class="w"> </span><span class="m">4</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2002</span><span class="w"> </span>年
+<span class="m">25</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2023</span><span class="w"> </span>年
+<span class="m">42</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2040</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;女&quot;</span>
+<span class="m">19</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2017</span><span class="w"> </span>年
+<span class="m">33</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2031</span><span class="w"> </span>年
+<span class="m">37</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2035</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+</code></pre></div></td></tr></table></div>
+</details>
+<p>これで完成！と言いたいところですが、完成していません。少し入力を変えると思った通りに動きません。</p>
+<details>
+<summary>存在しない日付を入力すると、エラーが発生してしまいます。</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-02-29&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span>
+Exception<span class="w"> </span><span class="k">in</span><span class="w"> </span>thread<span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="w"> </span>java.time.format.DateTimeParseException:<span class="w"> </span>Text<span class="w"> </span><span class="s1">&#39;1999-02-29&#39;</span><span class="w"> </span>could<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>parsed:<span class="w"> </span>Invalid<span class="w"> </span>date<span class="w"> </span><span class="s1">&#39;February 29&#39;</span><span class="w"> </span>as<span class="w"> </span><span class="s1">&#39;1999&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>a<span class="w"> </span>leap<span class="w"> </span>year
+<span class="w">        </span>at<span class="w"> </span>java.base/java.time.format.DateTimeFormatter.createError<span class="o">(</span>DateTimeFormatter.java:2023<span class="o">)</span>
+<span class="w">        </span>at<span class="w"> </span>java.base/java.time.format.DateTimeFormatter.parse<span class="o">(</span>DateTimeFormatter.java:1958<span class="o">)</span>
+<span class="w">        </span>at<span class="w"> </span>java.base/java.time.LocalDate.parse<span class="o">(</span>LocalDate.java:430<span class="o">)</span>
+<span class="w">        </span>at<span class="w"> </span>playground.todo.CalcYakudosiApp.main<span class="o">(</span>CalcYakudosiApp.java:19<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details>
+<summary>男の子を自称すると、女性扱いになります。</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;男の子&quot;</span>
+<span class="m">19</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2017</span><span class="w"> </span>年
+<span class="m">33</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2031</span><span class="w"> </span>年
+<span class="m">37</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2035</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+</code></pre></div></td></tr></table></div>
+</details>
+<p>これでは、「意図通りであること」を満たすことができません。
+<strong>プログラムは、正しい入力をしないと、意図通りに動かない</strong>のです。
+入力のパターンを増やすと必ずエラーが発生します。
+意図通りに動かすためには、入力パターンを考えることが重要です。</p>
+<h4 id="_11">💡 入力パターンを考える<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>入力できるのは２つで、「生年月日」と「性別」です。
+まず、「性別」の入力パターンから考えます。</p>
+<p>期待していたのは「男」「女」です。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>
+「男性」「女性」や「male」「female」の入力が考えられますが、
+「男」「女」以外だったら入力しなおしてもらいましょう。</p>
+<p>次に「生年月日」の入力パターンを考えます。
+まず、正しさを整理します。正しく「生年月日」を入力するには、</p>
+<ul>
+<li>存在する日付であること</li>
+<li>期待する日付フォーマットであること</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>「無回答」や「その他」を考慮できた人は素晴らしいです。が、この問題の本意ではないので省きます。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "header.autohide"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
