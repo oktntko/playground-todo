@@ -9,7 +9,14 @@ nav:
       - 開発ツールをインストールしよう: lets-try-anyway/tools.md
       - 開発環境を作ろう: lets-try-anyway/env.md
       - プロジェクトを作ろう: lets-try-anyway/project.md
-  - コンソールで動かそう: mock.md
+  - コンソールで動かそう:
+      - 理解度を確認しよう: run-in-console/comprehensioncheck.md
+      - 今これからどんなものを作るの？: run-in-console/mock.md
+      - 対話型アプリをコンソールで作ろう: run-in-console/mock.md
+      - ToDoをアプリに保存しよう: run-in-console/mock.md
+      - データベースの基本: run-in-console/mock.md
+      - ToDoをデータベースに保存しよう: run-in-console/mock.md
+      - 見た目にこだわろう: run-in-console/mock.md
   - ウェブシステム化しよう: mock.md
   - ウェブ画面を作ろう: mock.md
   - 仕様書を書こう: mock.md
@@ -37,13 +44,11 @@ markdown_extensions:
   - pymdownx.blocks.admonition # メモ、ヒント、警告 https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
   - pymdownx.blocks.details # 折り畳みブロック https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/details/
   - pymdownx.superfences # ネスト
-  - pymdownx.emoji: # アイコンと絵文字
+  - pymdownx.emoji: # アイコンと絵文字 https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.keys # キーコード
   - pymdownx.highlight: # コードのハイライト
-      use_pygments: true
-      noclasses: true
       linenums: true
   - pymdownx.tasklist: # チェックボックス
       custom_checkbox: true

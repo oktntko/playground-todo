@@ -39,35 +39,47 @@ TODO: `画像入れる`
 とはいえ、エクスプローラー（画面）から操作することも多いので、  
 `\\wsl.localhost\Ubuntu\home\%USERNAME%` はクイックアクセスに追加しておこう。
 
-## プロジェクトのソースコードを持ってこよう
-
-1. GitHubの[playground-todo](https://github.com/oktntko/playground-todo) をブラウザで表示する.
-2. `.(ドット)`を入力する.
-3. TODO: `フォルダ`を右クリックする.
-4. Download ボタンをクリックする.
-5. エクスプローラーのアドレスバーに `\\wsl.localhost\Ubuntu\home\%USERNAME%\my-todo` を入力する.
-6. フォルダの選択.
-7. 「サイトにファイルの読み取りを許可しますか？」＞ファイルを表示する.
-8. 「「my-todo」に変更を保存しますか？」＞変更を保存.
-
-/// admonition | ソースコードを持ってくる
-通常、ソースコードは バージョン管理ツール（Gitなど）で Clone します。  
-この方法はこのリポジトリ特有のやり方なので、それほど重要ではないです。  
-///
-
 ## プロジェクトのディレクトリの Git を初期化しよう
 
 ```bash
 ❯ pwd # 現在いるディレクトリを確認する
 /home/username
 ❯ cd my-todo # 作成した`my-todo`ディレクトリに移動する
-❯ ll # ダウンロードしたソースコードを確認する
 ❯ git init
+❯ git config --local user.name "あなたの名前" && git config --local user.email "あなたのメールアドレス"
+❯ # git config --local user.name "oktntko" && git config --local user.email "oktntko@gmail.com"
+❯ git commit --allow-empty --message="first commit"
 ```
 
-/// admonition | コマンド解説
-`cd` = `print working directory`. 現在いるディレクトリを確認する.  
-`ll` = `ls --all --long` のエイリアス（別名）. 詳しくは`cat ~/.zshrc`で.  
+## プロジェクトのソースコードを持ってこよう
+
+1. GitHubの[playground-todo](https://github.com/oktntko/playground-todo) をブラウザで表示する.
+2. `.(ドット)`を入力する.
+3. `todo-app`を右クリックする.
+4. Download ボタンをクリックする.
+5. エクスプローラーのアドレスバーに `\\wsl.localhost\Ubuntu\home\%USERNAME%\my-todo` を入力する.
+6. 「フォルダの選択」をクリックする.
+7. 「サイトにファイルの読み取りを許可しますか？」＞ファイルを表示する.
+8. 「「my-todo」に変更を保存しますか？」＞変更を保存.
+
+/// admonition | ソースコードを持ってくる
+通常、ソースコードは バージョン管理ツール（Gitなど）で Clone します。  
+この方法はこのリポジトリ特有のやり方なので、重要ではないです。  
+///
+
+## 不要なファイルを削除しよう
+
+```bash
+❯ pwd # 現在いるディレクトリを確認する
+/home/username/my-todo
+❯ rm --recursive --force */**/.*Zone.Identifier # `no matches found` と出ても問題ない
+❯ rm --recursive --force */**/*Zone.Identifier
+❯ git add .
+❯ git commit -m "Download todo-app"
+```
+
+/// admonition | Zone.Identifier
+あとからあとから生まれる…なぜ？
 ///
 
 ## Hello World をしよう
@@ -75,5 +87,16 @@ TODO: `画像入れる`
 ```bash
 ❯ pwd # 現在いるディレクトリを確認する
 /home/username/my-todo
-❯ code フォルダ名
+❯ code todo-app
+```
+
+1. `src/main/java/playground/todo/FirstApp.java` を開く.
+2. `public static void main(String[] args) {` の上に表示されている `Run | Debug` から、`Run` をクリックする.
+  - `TERMINAL`タブに`Hello World!`が表示される
+
+```bash
+❯ pwd
+/home/username/my-todo/todo-app
+❯ java src/main/java/playground/todo/FirstApp.java
+Hello World!
 ```
