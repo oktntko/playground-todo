@@ -2,7 +2,7 @@
 
 ## プロジェクトのディレクトリを作ろう
 
-```bash
+```bash title="Windows Terminal"
 ❯ cd ~ # ホームディレクトリに移動する.
 ❯ mkdir my-todo # プロジェクトディレクトを作る.
 ❯ ls --long # 作ったディレクトリを確認する.
@@ -16,38 +16,45 @@ drwxr-xr-x - username xx XXX 00:00 my-todo
 `ls` = `list segments`. ファイルやディレクトリの一覧を表示する.  
 ///
 
-コマンドで実行した操作を画面から実行します。
+コマンドで実行した操作を画面からも実行してみましょう。
 
-- エクスプローラーのアドレスバーに `\\wsl.localhost\Ubuntu\home\%USERNAME%` を入力する.
-- 右クリック＞新規作成＞フォルダを選ぶ.
-- ファイル名で「my-todo」を入力する.
+- ++windows+r++ から `\\wsl.localhost\Ubuntu\home\%USERNAME%` を入力する.
+  - ![mkdir-by-gui-01](mkdir-by-gui-01.png){ width="240" }
+  - ![mkdir-by-gui-02](mkdir-by-gui-02.png){ width="240" }
+- ++ctrl+shift+n++ でフォルダを作成し フォルダ名に「my-todo」を入力する.
+  - ![mkdir-by-gui-03](mkdir-by-gui-03.png){ width="320" }
+  - ![mkdir-by-gui-04](mkdir-by-gui-04.png){ width="320" }
 - 画面を確認する.
 
-開発の現場ではコマンドの操作で行うことが多くあります。  
+開発の現場ではコマンドの操作で行うことが多くあります。
 なぜでしょうか？  
 
-- コマンドライン
-  - 複雑な操作でもテキストだけで手順を書ける。
-  - 操作の履歴が残るので、ミスがあったときに原因が分かりやすい。
-- 画面からの操作
-  - 複雑な操作になると画像なども駆使する必要がある。
+- **コマンドライン**で操作してもらおうとすると...
+  - 複雑な操作でも**テキストだけで手順を書ける**。
+  - **操作の履歴が残る**ので、ミスがあったときに原因が分かりやすい。
+- **画面から**操作してもらおうとすると...
+  - 複雑な操作になると画像なども駆使しないと手順が書けない。
   - 操作の履歴が残らないので、画面キャプチャを取りながら進める必要がある。キャプチャを取らないとミスった原因が追えない。
 
-TODO: `画像入れる`
+そのため、コマンドラインでの操作に慣れる必要があります。
+最初のうちは、画面から操作するとこう、それをコマンドで操作するには？
+というように、画面とコマンドでの操作を往復してリンクさせるといいかもしれません。
 
-そのため、コマンドの操作に慣れる必要がある。  
-とはいえ、エクスプローラー（画面）から操作することも多いので、  
-`\\wsl.localhost\Ubuntu\home\%USERNAME%` はクイックアクセスに追加しておこう。
+/// admonition | CUI と GUI
+ショートカットキー然り、コマンドラインから操作できるとキーボードだけでパソコンを操作できるので作業効率は上がります。
+しかし、エンジニアはコマンドラインだけ使って仕事をするわけではありません。CUI と GUIは使い分けです。
+画面から操作することも多いので、`\\wsl.localhost\Ubuntu\home\%USERNAME%` はクイックアクセスに追加しておこう。
+///
 
 ## プロジェクトのディレクトリの Git を初期化しよう
 
-```bash
-❯ pwd # 現在いるディレクトリを確認する
-/home/username
-❯ cd my-todo # 作成した`my-todo`ディレクトリに移動する
+Git の操作に触れるのはここだけです。コミットをしたりブランチを切ったりは適当なタイミングで実施してください。
+
+```bash title="Windows Terminal"
+❯ cd ~/my-todo # 作成した`my-todo`ディレクトリに移動する
 ❯ git init
 ❯ git config --local user.name "あなたの名前" && git config --local user.email "あなたのメールアドレス"
-❯ # git config --local user.name "oktntko" && git config --local user.email "oktntko@gmail.com"
+❯ # 例）git config --local user.name "oktntko" && git config --local user.email "oktntko@gmail.com"
 ❯ git commit --allow-empty --message="first commit"
 ```
 
@@ -55,48 +62,55 @@ TODO: `画像入れる`
 
 1. GitHubの[playground-todo](https://github.com/oktntko/playground-todo) をブラウザで表示する.
 2. `.(ドット)`を入力する.
-3. `todo-app`を右クリックする.
-4. Download ボタンをクリックする.
-5. エクスプローラーのアドレスバーに `\\wsl.localhost\Ubuntu\home\%USERNAME%\my-todo` を入力する.
-6. 「フォルダの選択」をクリックする.
-7. 「サイトにファイルの読み取りを許可しますか？」＞ファイルを表示する.
-8. 「「my-todo」に変更を保存しますか？」＞変更を保存.
+3. `todo-app`を右クリックして Download ボタンをクリックする.
+   - ![project-github-confirm-00](project-github-confirm-00.png){ width="240" }
+4. エクスプローラーのアドレスバーに `\\wsl.localhost\Ubuntu\home\%USERNAME%\my-todo` を入力する.
+5. 「フォルダの選択」をクリックする.
+6. 「サイトにファイルの読み取りを許可しますか？」＞ファイルを表示する.
+   - ![project-github-confirm-01](project-github-confirm-01.png){ width="320" }
+7. 「「my-todo」に変更を保存しますか？」＞変更を保存.
+   - ![project-github-confirm-02](project-github-confirm-02.png){ width="320" }
 
-/// admonition | ソースコードを持ってくる
-通常、ソースコードは バージョン管理ツール（Gitなど）で Clone します。  
-この方法はこのリポジトリ特有のやり方なので、重要ではないです。  
-///
+/// admonition | 不要なファイルを削除しよう
 
-## 不要なファイルを削除しよう
+WSLにダウンロードするとファイル名に「Zone.Identifier」とついたファイルが生まれることに気づくかもしれません。
+理屈はなんかあるらしいですがいらないので消しましょう。
 
-```bash
-❯ pwd # 現在いるディレクトリを確認する
-/home/username/my-todo
+```bash title="Windows Terminal"
+❯ cd ~/my-todo # 作成した`my-todo`ディレクトリに移動する
 ❯ rm --recursive --force */**/.*Zone.Identifier # `no matches found` と出ても問題ない
 ❯ rm --recursive --force */**/*Zone.Identifier
 ❯ git add .
 ❯ git commit -m "Download todo-app"
 ```
 
-/// admonition | Zone.Identifier
-あとからあとから生まれる…なぜ？
 ///
 
 ## Hello World をしよう
 
-```bash
-❯ pwd # 現在いるディレクトリを確認する
-/home/username/my-todo
-❯ code todo-app
+とにかく動かしてみようという割に前置きが長かったですが、さっそく動かしてみましょう。
+
+### VSCode の拡張機能でプログラムを実行する方法
+
+```bash title="Windows Terminal"
+❯ cd ~/my-todo/todo-app # ダウンロードした`todo-app`ディレクトリに移動する
+❯ code . # 現在いるディレクトリ(`~/my-todo/todo-app`)をルートディレクトリとして VSCode を起動する
 ```
 
-1. `src/main/java/playground/todo/FirstApp.java` を開く.
+1. VSCodeで `src/main/java/playground/todo/FirstApp.java` を開く.
 2. `public static void main(String[] args) {` の上に表示されている `Run | Debug` から、`Run` をクリックする.
-  - `TERMINAL`タブに`Hello World!`が表示される
+   - ![project-hello-world-vscode-01](project-hello-world-vscode-01.png){ width="320" }
+3. `TERMINAL`タブに`Hello World!`が表示される
+   - ![project-hello-world-vscode-02](project-hello-world-vscode-02.png){ width="320" }
 
-```bash
-❯ pwd
-/home/username/my-todo/todo-app
-❯ java src/main/java/playground/todo/FirstApp.java
+### コンソールからプログラムを実行する方法
+
+```bash title="Windows Terminal"
+❯ cd ~/my-todo/todo-app # ダウンロードした`todo-app`ディレクトリに移動する
+❯ java src/main/java/playground/todo/FirstApp.java # プログラムを実行する
 Hello World!
 ```
+
+![project-hello-world-console-01](project-hello-world-console-01.png){ width="320" }
+
+これで準備は完了です！
