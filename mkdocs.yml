@@ -14,8 +14,8 @@ nav:
       - comprehension-check/index.md
       - FizzBuzz問題: comprehension-check/fizzbuzz-1.md
       - FizzBuzz問題の解説: comprehension-check/fizzbuzz-2.md
-      - アナグラム問題: comprehension-check/anagram-1.md
-      - アナグラム問題の解説: comprehension-check/anagram-2.md
+      - アナグラム: comprehension-check/anagram-1.md
+      - アナグラムの解説: comprehension-check/anagram-2.md
       - 厄年計算: comprehension-check/yakudosi-1.md
       - 厄年計算の解説: comprehension-check/yakudosi-2.md
   - コンソールで動かそう:

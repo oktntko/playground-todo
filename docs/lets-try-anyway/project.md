@@ -1,6 +1,6 @@
-# プロジェクトを作ろう
+# ▶️ プロジェクトを作ろう
 
-## プロジェクトのディレクトリを作ろう
+## 📁 プロジェクトのディレクトリを作ろう
 
 ```bash title="Windows Terminal"
 ❯ cd ~ # ホームディレクトリに移動する.
@@ -21,7 +21,7 @@ drwxr-xr-x - username xx XXX 00:00 my-todo
 - ++windows+r++ から `\\wsl.localhost\Ubuntu\home\%USERNAME%` を入力する.
   - ![mkdir-by-gui-01](mkdir-by-gui-01.png){ width="240" }
   - ![mkdir-by-gui-02](mkdir-by-gui-02.png){ width="240" }
-- ++ctrl+shift+n++ でフォルダを作成し フォルダ名に「my-todo」を入力する.
+- ++ctrl+shift+n++ でフォルダを作成し フォルダ名に"my-todo"を入力する.
   - ![mkdir-by-gui-03](mkdir-by-gui-03.png){ width="320" }
   - ![mkdir-by-gui-04](mkdir-by-gui-04.png){ width="320" }
 - 画面を確認する.
@@ -46,7 +46,7 @@ drwxr-xr-x - username xx XXX 00:00 my-todo
 画面から操作することも多いので、`\\wsl.localhost\Ubuntu\home\%USERNAME%` はクイックアクセスに追加しておこう。
 ///
 
-## プロジェクトのディレクトリの Git を初期化しよう
+## ⚡ プロジェクトのディレクトリの Git を初期化しよう
 
 Git の操作に触れるのはここだけです。コミットをしたりブランチを切ったりは適当なタイミングで実施してください。
 
@@ -58,22 +58,22 @@ Git の操作に触れるのはここだけです。コミットをしたりブ�
 ❯ git commit --allow-empty --message="first commit"
 ```
 
-## プロジェクトのソースコードを持ってこよう
+## 📃 プロジェクトのソースコードを持ってこよう
 
 1. GitHubの[playground-todo](https://github.com/oktntko/playground-todo) をブラウザで表示する.
 2. `.(ドット)`を入力する.
 3. `todo-app`を右クリックして Download ボタンをクリックする.
    - ![project-github-confirm-00](project-github-confirm-00.png){ width="240" }
 4. エクスプローラーのアドレスバーに `\\wsl.localhost\Ubuntu\home\%USERNAME%\my-todo` を入力する.
-5. 「フォルダの選択」をクリックする.
-6. 「サイトにファイルの読み取りを許可しますか？」＞ファイルを表示する.
+5. "フォルダの選択"をクリックする.
+6. "サイトにファイルの読み取りを許可しますか？"＞ファイルを表示する.
    - ![project-github-confirm-01](project-github-confirm-01.png){ width="320" }
-7. 「「my-todo」に変更を保存しますか？」＞変更を保存.
+7. ""my-todo"に変更を保存しますか？"＞変更を保存.
    - ![project-github-confirm-02](project-github-confirm-02.png){ width="320" }
 
 /// admonition | 不要なファイルを削除しよう
 
-WSLにダウンロードするとファイル名に「Zone.Identifier」とついたファイルが生まれることに気づくかもしれません。
+WSLにダウンロードするとファイル名に"Zone.Identifier"とついたファイルが生まれることに気づくかもしれません。
 理屈はなんかあるらしいですがいらないので消しましょう。
 
 ```bash title="Windows Terminal"
@@ -86,7 +86,7 @@ WSLにダウンロードするとファイル名に「Zone.Identifier」とつ�
 
 ///
 
-## Hello World をしよう
+## 👋 Hello World をしよう
 
 とにかく動かしてみようという割に前置きが長かったですが、さっそく動かしてみましょう。
 

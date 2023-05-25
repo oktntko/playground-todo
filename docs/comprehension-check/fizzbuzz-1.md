@@ -1,6 +1,4 @@
-# FizzBuzz問題
-
-## ❔ 問題 (目標⏰: 10分)
+# ❔ FizzBuzz問題 (目標⏰: 10分)
 
 1 から 30 までの数を順番に出力すること。  
 ただし、以下のルールを満たすこと。
@@ -9,7 +7,7 @@
 - 数が 5 の倍数の時はBuzzと出力すること
 - 数が 3 の倍数かつ 5 の倍数の時はFizzBuzzと出力すること
 
-### 🖨️ 出力結果
+## 🖨️ 出力結果
 
 ```bash title="Windows Terminal"
 1
@@ -44,7 +42,7 @@ Fizz
 FizzBuzz
 ```
 
-### 🔰 ベースコード
+## 🔰 ベースコード
 
 ```java title="FizzBuzzApp.java"
 package playground.todo;
@@ -57,7 +55,7 @@ public class FizzBuzzApp {
 }
 ```
 
-### ▶️ 実行方法
+## ▶️ 実行方法
 
 ```bash title="Windows Terminal"
 ❯ cd ~/my-todo/todo-app
