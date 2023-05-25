@@ -11,7 +11,7 @@
 
 ### 🖨️ 出力結果
 
-```bash
+```bash title="Windows Terminal"
 1
 2
 Fizz
@@ -59,7 +59,7 @@ public class FizzBuzzApp {
 
 ### ▶️ 実行方法
 
-```bash
+```bash title="Windows Terminal"
 ❯ cd ~/my-todo/todo-app
 ❯ java src/main/java/playground/todo/FizzBuzzApp.java
 fizzbuzz

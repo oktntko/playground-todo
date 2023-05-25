@@ -10,7 +10,7 @@
 
 ### 🖨️ 出力結果
 
-```bash
+```bash title="Windows Terminal"
 ❯ java src/main/java/playground/todo/AnagramApp.java "Statue of Liberty" "built to stay free"
 true
 ❯ java src/main/java/playground/todo/AnagramApp.java "anagrams" "ARS MAGNA"
@@ -49,7 +49,7 @@ public class AnagramApp {
 
 ### ▶️ 実行方法
 
-```bash
+```bash title="Windows Terminal"
 ❯ cd ~/my-todo/todo-app
 ❯ java src/main/java/playground/todo/AnagramApp.java "a" "b"
 a

@@ -1,7 +1,5 @@
 # アナグラム問題の解説
 
-## 🙋 解説
-
 時間内にゴールにたどり着けたでしょうか？
 時間内にゴールまでたどり着けなかったとしたら、重要なのは、**なぜ時間内にゴールまでたどり着けなかったのか？を分析すること**です。  
 
@@ -16,6 +14,8 @@
 を教えてくれます。その小さな分析の積み重ねが、「できなかったこと」を「できること」に変えていくのです。
 
 それでは解説をしていきましょう。
+
+## 🙋 解説
 
 ### 💡 ゴールまでの筋道を立てる
 
@@ -46,7 +46,7 @@
 ゴールまでの筋道が整理できなかった（もしくは今後の課題で、ここで詰まる傾向が自分に見られる）場合、
 ロジカルに物事を考える能力・整理する能力が不足しています。
 
-ゲーム感覚で、ロジックパズルに挑戦しましょう。
+ゲーム感覚で、ロジックパズルに挑戦してロジカル力を鍛えましょう。
 
 - [クイズ大陸](http://quiz-tairiku.com/logic/index.html)
 - [幼女の論理クイズ](https://sist8.com/logic)
@@ -58,8 +58,7 @@
 1. 『java 半角スペース 取り除く』で検索すれば…
    - `String#trim` や `String#replaceAll(" ", "")` が見つかるはず
 2. 『java 大文字 小文字 変換』で検索すれば…
-   - `String#toLowerCase` が見つかるはず
-   - ついでに、 `String#toUpperCase` も見つかるはず
+   - `String#toUpperCase` や `String#toLowerCase` が見つかるはず
 
 /// admonition | サンプルコード
 
@@ -170,7 +169,7 @@
 例えば、変数`a`はスペースを取り除くけど、変数`b`は取り除かなかった場合、
 入力する順番を変えるだけで、異なる結果が返ってきてしまいます。
 
-```bash
+```bash title="Windows Terminal"
 ❯ java src/main/java/playground/todo/AnagramApp.java "ARS MAGNA" "anagrams"
 true
 ❯ java src/main/java/playground/todo/AnagramApp.java "anagrams" "ARS MAGNA"

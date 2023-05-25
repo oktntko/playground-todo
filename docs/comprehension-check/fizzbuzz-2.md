@@ -58,12 +58,8 @@
 `Fizz`が出力されます。なので、評価する順番を直しましょう。
 
 <figure markdown>
-  <figcaption>NG!</figcaption>
-  ![fizzbuzz-if-1.png](fizzbuzz-if-1.png){ width="240" }
-</figure>
-<figure markdown>
-  <figcaption>OK!</figcaption>
-  ![fizzbuzz-if-2.png](fizzbuzz-if-2.png){ width="240" }
+  <figcaption>NO!</figcaption>
+  ![fizzbuzz-if-1.png](fizzbuzz-if-1.png){ width="480" }
 </figure>
 ---
 

@@ -46,6 +46,9 @@ theme:
     - navigation.indexes # セクション インデックス ページが有効になっている場合、ドキュメントをセクションに直接添付できます。これは、概要ページを提供する場合に特に便利です
     - navigation.footer # フッターには、現在のページの前のページと次のページへのリンクを含めることができます。
 
+extra_css:
+  - assets/main.css
+
 plugins:
   search:
     lang: "ja"
