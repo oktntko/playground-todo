@@ -1,0 +1,1529 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../yakudosi-1/">
+      
+      
+        <link rel="next" href="../../run-in-console/mock/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>厄年計算の解説 - Playground Todo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/main.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Playground Todo" class="md-header__button md-logo" aria-label="Playground Todo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Playground Todo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              厄年計算の解説
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oktntko/playground-todo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Playground Todo" class="md-nav__button md-logo" aria-label="Playground Todo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Playground Todo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oktntko/playground-todo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        はじめに
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../lets-try-anyway/">とにかく動かしてみよう</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          とにかく動かしてみよう
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/pc/" class="md-nav__link">
+        いいパソコンを使おう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/windows/" class="md-nav__link">
+        Windows の設定を確認しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/tools/" class="md-nav__link">
+        開発ツールをインストールしよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/env/" class="md-nav__link">
+        開発環境を作ろう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/project/" class="md-nav__link">
+        プロジェクトを作ろう
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">理解度を確認しよう</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          理解度を確認しよう
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fizzbuzz-1/" class="md-nav__link">
+        FizzBuzz問題
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fizzbuzz-2/" class="md-nav__link">
+        FizzBuzz問題の解説
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anagram-1/" class="md-nav__link">
+        アナグラム
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anagram-2/" class="md-nav__link">
+        アナグラムの解説
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yakudosi-1/" class="md-nav__link">
+        厄年計算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          厄年計算の解説
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        厄年計算の解説
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    💡 ゴールまでの筋道を立ててコードに書いて動きを確認して見た目を整える
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    💡 "性別"の入力パターンを考える
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    💡 "生年月日"の入力パターンを考える
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          コンソールで動かそう
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          コンソールで動かそう
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-in-console/mock/" class="md-nav__link">
+        今これからどんなものを作るの？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-in-console/mock/" class="md-nav__link">
+        対話型アプリをコンソールで作ろう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-in-console/mock/" class="md-nav__link">
+        ToDoをアプリに保存しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-in-console/mock/" class="md-nav__link">
+        データベースの基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-in-console/mock/" class="md-nav__link">
+        ToDoをデータベースに保存しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-in-console/mock/" class="md-nav__link">
+        見た目にこだわろう
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        ウェブシステム化しよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        ウェブ画面を作ろう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        仕様書を書こう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        試験をしよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        仕様変更をしよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        デプロイしてみよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        振り返り＆今後
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    💡 ゴールまでの筋道を立ててコードに書いて動きを確認して見た目を整える
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    💡 "性別"の入力パターンを考える
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    💡 "生年月日"の入力パターンを考える
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">🙋 厄年計算の解説<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>TODO: 振り返り解説</p>
+<h2 id="_2">💡 ゴールまでの筋道を立ててコードに書いて動きを確認して見た目を整える<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>これもいきなりコードを書き始めるのではなく、ゴールまでの筋道を考えましょう。
+しかし、日付の計算は頭がこんがらがりやすいです。さらに、"数え年"なる聞きなれない言葉も出てきました。</p>
+<p>こういうときは、<strong>サンプルデータを使って考えましょう。</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生年月日</td>
+<td>1999-12-12</td>
+</tr>
+<tr>
+<td>性別</td>
+<td>男</td>
+</tr>
+</tbody>
+</table>
+<p>この人はいつ厄年になるでしょうか？地道にみていきます。</p>
+<table>
+<thead>
+<tr>
+<th align="right">年齢</th>
+<th>年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1 歳</td>
+<td>1999 年</td>
+</tr>
+<tr>
+<td align="right">4 歳</td>
+<td>2002 年</td>
+</tr>
+<tr>
+<td align="right">25 歳</td>
+<td>2023 年</td>
+</tr>
+<tr>
+<td align="right">42 歳</td>
+<td>2040 年</td>
+</tr>
+<tr>
+<td align="right">61 歳</td>
+<td>2059 年</td>
+</tr>
+</tbody>
+</table>
+<p>年齢の差分年が増えていっているだけですね。<strong>"数え年"は起点を１歳とするかどうか</strong>で、<strong>生年月日は年の部分だけが重要</strong>であることが分かりました。
+性別が女だったとしたらどうでしょうか？</p>
+<table>
+<thead>
+<tr>
+<th align="right">年齢</th>
+<th>年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1 歳</td>
+<td>1999 年</td>
+</tr>
+<tr>
+<td align="right">19 歳</td>
+<td>2017 年</td>
+</tr>
+<tr>
+<td align="right">33 歳</td>
+<td>2031 年</td>
+</tr>
+<tr>
+<td align="right">37 歳</td>
+<td>2035 年</td>
+</tr>
+<tr>
+<td align="right">61 歳</td>
+<td>2059 年</td>
+</tr>
+</tbody>
+</table>
+<p>加算する数字が違うだけですね。
+これでゴールまでの筋道が立てられそうです。</p>
+<ol>
+<li>"生年月日"から"年"を数値として抽出する＝<code>生年</code>とする</li>
+<li>性別によって加算するデータを切り替える＝<code>厄年齢リスト</code>とする</li>
+<li><code>厄年齢リスト</code>を繰り返し処理する＝一つのデータは<code>厄年齢</code>とする<ul>
+<li><code>生年</code>＋<code>厄年齢</code>－１を出力する</li>
+</ul>
+</li>
+</ol>
+<p>変数名まで決められました。また、表を使って考えたことで、これをそのまま出力結果にするアイディアも生まれました。</p>
+<p>あとはアナグラムのときと同様に、プログラミング言語に翻訳していきます。
+言語仕様が分からないところは検索していきます。</p>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CalcYakudosiApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">生年月日</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">性別</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">生年月日</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">));</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find厄年齢リスト</span><span class="p">(</span><span class="n">性別</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">年齢</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%2s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">厄年齢</span><span class="p">));</span>
+</span><span class="hll"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">厄年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span class="hll"><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">年齢</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 歳 : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 年&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">find厄年齢リスト</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">性別</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">性別</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;男&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span><span class="w"> </span><span class="c1">// 男性</span>
+</span><span class="hll"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span><span class="w"> </span><span class="c1">// 女性</span>
+</span><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>次のループ処理を共通化するために厄年齢リストを決める処理を関数化しています。見た目を整えていますね。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find厄年齢リスト</span><span class="p">(</span><span class="n">性別</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p><code>String#format</code>で年齢をスペースで埋めて、"4 歳"を表示するときにずれないようにしています。見た目を整えていますね。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">年齢</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%2s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">厄年齢</span><span class="p">));</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition">
+<p class="admonition-title">🖨️ 出力結果</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Windows Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span>
+<span class="w"> </span><span class="m">4</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2002</span><span class="w"> </span>年
+<span class="m">25</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2023</span><span class="w"> </span>年
+<span class="m">42</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2040</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;女&quot;</span>
+<span class="m">19</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2017</span><span class="w"> </span>年
+<span class="m">33</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2031</span><span class="w"> </span>年
+<span class="m">37</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2035</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+</code></pre></div></td></tr></table></div>
+</div>
+<p>これで完成！と言いたいところですが、完成していません。少し入力を変えると思った通りに動きません。</p>
+<div class="admonition failure">
+<p class="admonition-title">生年月日に４桁未満の文字を入力すると、エラーが発生してしまいます。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Windows Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;333&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span><span class="w">       </span>
+Exception<span class="w"> </span><span class="k">in</span><span class="w"> </span>thread<span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="w"> </span>java.lang.StringIndexOutOfBoundsException:<span class="w"> </span>begin<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>end<span class="w"> </span><span class="m">4</span>,<span class="w"> </span>length<span class="w"> </span><span class="m">3</span>
+<span class="w">        </span>at<span class="w"> </span>java.base/java.lang.String.checkBoundsBeginEnd<span class="o">(</span>String.java:4601<span class="o">)</span>
+<span class="w">        </span>at<span class="w"> </span>java.base/java.lang.String.substring<span class="o">(</span>String.java:2704<span class="o">)</span>
+<span class="w">        </span>at<span class="w"> </span>playground.todo.CalcYakudosiApp.main<span class="o">(</span>CalcYakudosiApp.java:16<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">生年月日に日付以外の文字を入力しても、エラーになりません。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Windows Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-TE-ST&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span>
+<span class="w"> </span><span class="m">4</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2002</span><span class="w"> </span>年
+<span class="m">25</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2023</span><span class="w"> </span>年
+<span class="m">42</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2040</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">性別で男の子を自称すると、女性扱いになります。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Windows Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;男の子&quot;</span>
+<span class="m">19</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2017</span><span class="w"> </span>年
+<span class="m">33</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2031</span><span class="w"> </span>年
+<span class="m">37</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2035</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+</code></pre></div></td></tr></table></div>
+</div>
+<p>これでは、"意図通りであること"を満たすことができません。
+<strong>プログラムは、正しい入力をしないと、意図通りに動かない</strong>のです。</p>
+<p>入力できるパターンが増えても、意図通りに動くようにしてあげる必要があります。
+意図通りに動かすためには、</p>
+<ul>
+<li>①どんな入力がありうるか？を列挙すること</li>
+<li>②意図通りでない入力値をどう打ち返してあげるのが適切か？</li>
+</ul>
+<p>を考えることが重要です。</p>
+<p>入力できるのは２つで、"生年月日"と"性別"です。
+まず、簡単な"性別"の入力パターンから考えます。</p>
+<h2 id="_3">💡 "性別"の入力パターンを考える<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>期待していた入力値は"男""女"です。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>
+"男性""女性"や"male""female"の入力も考えられますね。
+しかし、システムの都合上、"男""女"以外だったら入力しなおしてもらいましょう。<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CalcYakudosiApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">生年月日</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="n">Sex</span><span class="w"> </span><span class="n">性別</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">性別をチェックしてEnumに変換</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">生年月日</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">));</span>
+
+<span class="hll"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find厄年齢リスト</span><span class="p">(</span><span class="n">性別</span><span class="p">);</span>
+</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">年齢</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%2s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">厄年齢</span><span class="p">));</span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">厄年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">年齢</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 歳 : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 年&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">find厄年齢リスト</span><span class="p">(</span><span class="n">Sex</span><span class="w"> </span><span class="n">性別</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">性別</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">性別</span><span class="p">.</span><span class="na">男</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span><span class="w"> </span><span class="c1">// 男性</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span><span class="w"> </span><span class="c1">// 女性</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="hll"><span class="w">  </span><span class="kd">enum</span><span class="w"> </span><span class="n">Sex</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="n">男</span><span class="p">,</span><span class="w"> </span><span class="n">女</span><span class="p">,</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Sex</span><span class="w"> </span><span class="nf">性別をチェックしてEnumに変換</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="n">Sex</span><span class="p">.</span><span class="na">values</span><span class="p">())</span>
+</span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">filter</span><span class="p">((</span><span class="n">sex</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">sex</span><span class="p">.</span><span class="na">name</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">input</span><span class="p">))</span>
+</span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">findFirst</span><span class="p">().</span><span class="na">orElseThrow</span><span class="p">();</span><span class="w"> </span><span class="c1">// NoSuchElementException</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><a href="https://qiita.com/hkusu/items/0996735553580bfabbdb">列挙型(Enum)に文字列や数値を利用する備忘録</a></li>
+<li><a href="https://qiita.com/takumi-n/items/369dd3fcb9ccb8fcfa44">Java Stream APIをいまさら入門</a></li>
+<li><a href="https://qiita.com/omix222/items/eb3bcdd2fd98794d8a35">Javaの例外の話(チェック例外と非チェック例外)</a></li>
+</ul>
+<div class="admonition">
+<p class="admonition-title">性別に"男""女"以外を入力するとエラーになる🎉</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Windows Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;男の子&quot;</span>
+Exception<span class="w"> </span><span class="k">in</span><span class="w"> </span>thread<span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="w"> </span>java.util.NoSuchElementException:<span class="w"> </span>No<span class="w"> </span>value<span class="w"> </span>present
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+<p>期待通りにエラーになってくれました。</p>
+<p>ただ、このままではエラーになっただけで、中のつくりを知らない人はどう入力すればいいかわかりません。
+そこで、<strong>エラーメッセージ</strong>を表示してあげましょう。</p>
+<p>エラーメッセージについては<a href="https://blog.adobe.com/jp/publish/2022/07/25/cc-web-error-message-design-ux">"ユーザーに優しいエラーメッセージ"をデザインする方法 | アドビ UX 道場 </a>にまとまっています。エラーメッセージを考えるうえで最も重要なのは、次のポイントです。</p>
+<blockquote>
+<p><strong>ユーザーに解決策を提示する</strong></p>
+</blockquote>
+<p>エラーメッセージを表示するのは、ユーザに正しい操作や入力を行ってほしいからです。
+"こうすればいいんだよ"と解決策を提示してあげましょう。</p>
+<details class="example">
+<summary>エラーメッセージを考えてみよう</summary>
+<ul>
+<li>❌ <code>入力した値に誤りがあります。</code><ul>
+<li>😭 それはわかっているよ。<code>NoSuchElementException</code>と表示されるのと同レベル</li>
+</ul>
+</li>
+<li>❌ <code>男の子 は入力できません。</code><ul>
+<li>🥺 だからどう入力すればいいの？</li>
+</ul>
+</li>
+<li>✅ <code>性別には"男"か"女"と入力してください。</code><ul>
+<li>😀 "男の子"じゃだめで、"男"って入力すればいいんだね！</li>
+</ul>
+</li>
+</ul>
+</details>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CalcYakudosiApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">生年月日</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">      </span><span class="n">Sex</span><span class="w"> </span><span class="n">性別</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">性別をチェックしてEnumに変換</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">生年月日</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">));</span>
+
+<span class="w">      </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find厄年齢リスト</span><span class="p">(</span><span class="n">性別</span><span class="p">);</span>
+
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">年齢</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%2s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">厄年齢</span><span class="p">));</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">厄年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">年齢</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 歳 : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 年&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NoSuchElementException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;性別には\&quot;男\&quot;か\&quot;女\&quot;と入力してください。&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition">
+<p class="admonition-title">メッセージも出ました🎉</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Windows Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;男の子&quot;</span>
+性別には<span class="s2">&quot;男&quot;</span>か<span class="s2">&quot;女&quot;</span>と入力してください。
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+<h2 id="_4">💡 "生年月日"の入力パターンを考える<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>次に"生年月日"の入力パターンを考えます。</p>
+<p><strong>まず、正しさを整理します。</strong>分かることから考えるとそれ以外のことが見えてきます。</p>
+<p>"正しい生年月日"とは何でしょうか？
+難しく考える必要はありません。
+"存在する日付であること"が必要です。</p>
+<p>では、存在する日付を入力してもらえば十分でしょうか？</p>
+<p><img alt="Image title" src="https://2.bp.blogspot.com/-nMjuko9tXGc/Ut0BV0jJHkI/AAAAAAAAdW0/tRb8t3PEY28/s800/kangaeruhito.png" width="120" /></p>
+<p>常識の範囲内でも、日付を表現するいろんな形式があります。
+問題文にもあった"<strong>西暦</strong>"、役所の書類で使われがちな"<strong>和暦</strong>"、少なくとも２つの表現方法は知っていますね。
+出力は西暦で行うので、入力も西暦で行ってもらいましょう。</p>
+<p>"正しい生年月日"といえるためには、</p>
+<ul>
+<li>①存在する日付であること</li>
+<li>②西暦表記で入力されていること</li>
+</ul>
+<p>が必要である、と定義しましょう。</p>
+<p>正しさが定義出来たら、<strong>どんな入力がありうるか？</strong>も考えられますね。</p>
+<p>❌ 存在しない日付が入力される<br />
+❌ 西暦以外の表記が入力される  </p>
+<div class="admonition tip">
+<p class="admonition-title">実は②西暦表記が重要</p>
+<p>例にあった"333"や"1999-TE-ST"も、何かの暦の表現としては生年月日を示すのに適切なのかもしれません。
+ただ、西暦表記で入力するのが正しい、と定義してしまえば、
+西暦以外にどんな表記があるか？を知る必要がなくなります💡</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Windows Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;333&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span><span class="w">       </span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-TE-ST&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<p>では、西暦表記で存在する日付が入力されなかったらエラーメッセージを出しましょう。</p>
+<p style="font-size: 24px; text-align: center; font-weight: bold;">ちょっと待ってください！</p>
+
+<figure>
+<figcaption>まだあわてるような時間じゃない</figcaption>
+<p><img alt="yakudosi-sendou.png" src="../yakudosi-sendou.png" width="480" /></p>
+</figure>
+<p>西暦表記ってなんですか？<code>1999年12月12日</code>も<code>1999/12/12</code>も<code>12.12.1999</code>も西暦表記です。
+月と日を0埋めするパターン、0埋めしないパターンもあります（<code>1999/01/02</code> か <code>1999/1/2</code>）。
+どの形式が正しいか、きちんと定めたらエラーメッセージを出しましょう。</p>
+<div class="admonition">
+<p class="admonition-title">知っておこう ISO 8601</p>
+<p><a href="https://ja.wikipedia.org/wiki/ISO_8601">ISO 8601は、日付と時刻の表記に関するISOの国際規格である。この規格の主眼は、日付と時刻の記述順序が国や文化によってまちまちである[注 1][1]ものを、大→小の順序（ビッグエンディアン big-endian）を貫徹して、日付・時刻の記述順序をただ一種類に標準化していることにある[2]。また、時刻表現は24時制だけに限定している。</a></p>
+<p>wikipediaが丁寧で分かりやすかった。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>日付のみ</th>
+<th>日付時刻</th>
+<th>日付時刻＋タイムゾーン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基本形式</td>
+<td>20170717</td>
+<td>20170717T170717.77</td>
+<td>20230512T183614+0900</td>
+</tr>
+<tr>
+<td>拡張形式</td>
+<td>2017-07-17</td>
+<td>2017-07-17T17:07:17.77</td>
+<td>2023-05-12T18:36:14+09:00</td>
+</tr>
+</tbody>
+</table>
+<p>システム作りの救世主です。パターンが無限にありうる日付表記の標準規格を定義してくれています。</p>
+</div>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CalcYakudosiApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;引数に二つの文字列を入力してください。&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">生年月日をチェックして生年に変換</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+</span><span class="w">      </span><span class="n">Sex</span><span class="w"> </span><span class="n">性別</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">性別をチェックしてEnumに変換</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+
+<span class="w">      </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find厄年齢リスト</span><span class="p">(</span><span class="n">性別</span><span class="p">);</span>
+
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">厄年齢リスト</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">年齢</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%2s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">厄年齢</span><span class="p">));</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">厄年</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">生年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年齢</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">年齢</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 歳 : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">厄年</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; 年&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">DateTimeParseException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;生年月日はyyyy-MM-dd形式で入力してください。(例: 2017-07-17)&quot;</span><span class="p">);</span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NoSuchElementException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;性別には\&quot;男\&quot;か\&quot;女\&quot;と入力してください。&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="hll"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">生年月日をチェックして生年に変換</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="c1">// https://docs.oracle.com/javase/jp/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_LOCAL_DATE</span>
+</span><span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ISO_LOCAL_DATE</span><span class="p">).</span><span class="na">getYear</span><span class="p">();</span><span class="w"> </span><span class="c1">// yyyy-MM-dd</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<p>もう少しです！動きを確認して完成です。</p>
+<div class="admonition">
+<p class="admonition-title">メッセージも出ました🎉</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Windows Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span><span class="w"> </span><span class="c1"># (生年月日) 正しい入力</span>
+<span class="w"> </span><span class="m">4</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2002</span><span class="w"> </span>年
+<span class="m">25</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2023</span><span class="w"> </span>年
+<span class="m">42</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2040</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-02-29&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span><span class="w"> </span><span class="c1"># (生年月日) 存在しない日付</span>
+生年月日はyyyy-MM-dd形式で入力してください。<span class="o">(</span>例:<span class="w"> </span><span class="m">2017</span>-07-17<span class="o">)</span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-2-28&quot;</span><span class="w"> </span><span class="s2">&quot;男&quot;</span><span class="w"> </span><span class="c1"># (生年月日) 形式誤り</span>
+生年月日はyyyy-MM-dd形式で入力してください。<span class="o">(</span>例:<span class="w"> </span><span class="m">2017</span>-07-17<span class="o">)</span>
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;女&quot;</span><span class="w"> </span><span class="c1"># (性別) 正しい入力</span>
+<span class="m">19</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2017</span><span class="w"> </span>年
+<span class="m">33</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2031</span><span class="w"> </span>年
+<span class="m">37</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2035</span><span class="w"> </span>年
+<span class="m">61</span><span class="w"> </span>歳<span class="w"> </span>:<span class="w"> </span><span class="m">2059</span><span class="w"> </span>年
+❯<span class="w"> </span>java<span class="w"> </span>src/main/java/playground/todo/CalcYakudosiApp.java<span class="w"> </span><span class="s2">&quot;1999-12-12&quot;</span><span class="w"> </span><span class="s2">&quot;女子&quot;</span><span class="w"> </span><span class="c1"># (性別) 選択肢にない入力</span>
+性別には<span class="s2">&quot;男&quot;</span>か<span class="s2">&quot;女&quot;</span>と入力してください。
+</code></pre></div></td></tr></table></div>
+</div>
+<p style="font-size: 24px; text-align: center; font-weight: bold;">完成！🎉</p>
+
+<div class="admonition tip">
+<p class="admonition-title">正常系 と 準正常系 と 異常系</p>
+<p>動きを確認することをシステム開発の世界では"試験"と言います。</p>
+<p>試験の世界では、システムの目的の通りに動くことの確認を<strong>正常系テスト</strong>（厄年を出力するパターン）、<br />
+目的通りに動くために必要な条件がそろっていないときでも適切に動くことの確認を<strong>準正常系テスト</strong>と言います。（エラーメッセージを出すパターン）<br />
+今回扱っていませんが、動くわけないじゃんという状態でもパニックにならないことの確認を<strong>異常系テスト</strong>と言います。（パソコンが爆発したとか）</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>"無回答"や"その他"を考慮できた人は素晴らしいです。が、この問題の本意ではないので省きます。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>"男性""女性"を期待する入力値としてもOKです。&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../yakudosi-1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 厄年計算" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                厄年計算
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../run-in-console/mock/" class="md-footer__link md-footer__link--next" aria-label="Next: 今これからどんなものを作るの？" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                今これからどんなものを作るの？
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "header.autohide", "navigation.indexes", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
