@@ -1,10 +1,8 @@
 # 🙋 厄年計算の解説
 
-TODO: 振り返り解説
-
 ## 💡 ゴールまでの筋道を立ててコードに書いて動きを確認して見た目を整える
 
-これもいきなりコードを書き始めるのではなく、ゴールまでの筋道を考えましょう。
+いきなりコードを書き始めるのではなく、ゴールまでの筋道を考えましょう。
 しかし、日付の計算は頭がこんがらがりやすいです。さらに、"数え年"なる聞きなれない言葉も出てきました。
 
 こういうときは、**サンプルデータを使って考えましょう。**
@@ -24,7 +22,7 @@ TODO: 振り返り解説
 | 42 歳 | 2040 年 |
 | 61 歳 | 2059 年 |
 
-年齢の差分年が増えていっているだけですね。**"数え年"は起点を１歳とするかどうか**で、**生年月日は年の部分だけが重要**であることが分かりました。
+年齢の差分年が増えていっているだけですね。**"数え年"は起点を１歳とするかどうか**で、**生年月日は年の部分だけが重要**であることがわかりました。
 性別が女だったとしたらどうでしょうか？
 
 |  年齢 | 年      |
@@ -40,13 +38,13 @@ TODO: 振り返り解説
 
 1. "生年月日"から"年"を数値として抽出する＝`生年`とする
 2. 性別によって加算するデータを切り替える＝`厄年齢リスト`とする
-3. `厄年齢リスト`を繰り返し処理する＝一つのデータは`厄年齢`とする
+3. `厄年齢リスト`を繰り返し処理する＝ひとつずつのデータは`厄年齢`とする
    - `生年`＋`厄年齢`－１を出力する
 
-変数名まで決められました。また、表を使って考えたことで、これをそのまま出力結果にするアイディアも生まれました。
+変数名まで決められました。また、表を使って考えたことで、表形式で出力すると分かりやすいということにも気がつきました。
 
 あとはアナグラムのときと同様に、プログラミング言語に翻訳していきます。
-言語仕様が分からないところは検索していきます。
+言語仕様がわからないところは検索していきます。
 
 /// admonition | サンプルコード
 
@@ -54,7 +52,7 @@ TODO: 振り返り解説
 
   public static void main(String[] args) {
     if (args.length != 2) {
-      System.out.println("引数に二つの文字列を入力してください。");
+      System.out.println("引数に２つの文字列を入力してください。");
       return;
     }
 
@@ -112,7 +110,9 @@ TODO: 振り返り解説
 
 ///
 
-これで完成！と言いたいところですが、完成していません。少し入力を変えると思った通りに動きません。
+## 😟 入力値を変えると思った通りに動かない
+
+完成！と言いたいところですが、入力値を変えると思った通りに動きません。
 
 /// admonition | 生年月日に４桁未満の文字を入力すると、エラーが発生してしまいます。
     type: failure
@@ -164,24 +164,24 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 0, e
 
 を考えることが重要です。
 
-入力できるのは２つで、"生年月日"と"性別"です。
+入力できるのは"生年月日"と"性別"の２つです。
 まず、簡単な"性別"の入力パターンから考えます。
 
 ## 💡 "性別"の入力パターンを考える
 
-期待していた入力値は"男""女"です。[^1]
-"男性""女性"や"male""female"の入力も考えられますね。
-しかし、システムの都合上、"男""女"以外だったら入力しなおしてもらいましょう。[^2]
+期待していた入力値は"男" "女"です。[^1]
+"男性" "女性"や"male" "female"の入力も考えられますね。
+しかし、システムの都合上、"男" "女"以外だったら入力しなおしてもらいましょう。[^2]
 
 [^1]: "無回答"や"その他"を考慮できた人は素晴らしいです。が、この問題の本意ではないので省きます。
-[^2]: "男性""女性"を期待する入力値としてもOKです。
+[^2]: "男性" "女性"を期待する入力値としてもOKです。
 
 /// admonition | サンプルコード
 
 ```java title="CalcYakudosiApp.java" hl_lines="8 12 29-37"
   public static void main(String[] args) {
     if (args.length != 2) {
-      System.out.println("引数に二つの文字列を入力してください。");
+      System.out.println("引数に２つの文字列を入力してください。");
       return;
     }
 
@@ -222,7 +222,7 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 0, e
 - [Java Stream APIをいまさら入門](https://qiita.com/takumi-n/items/369dd3fcb9ccb8fcfa44)
 - [Javaの例外の話(チェック例外と非チェック例外)](https://qiita.com/omix222/items/eb3bcdd2fd98794d8a35)
 
-/// admonition | 性別に"男""女"以外を入力するとエラーになる🎉
+/// admonition | 性別に"男" "女"以外を入力するとエラーになる🎉
 
 ```bash title="Windows Terminal"
 ❯ java src/main/java/playground/todo/CalcYakudosiApp.java "1999-12-12" "男の子"
@@ -238,12 +238,15 @@ Exception in thread "main" java.util.NoSuchElementException: No value present
 ただ、このままではエラーになっただけで、中のつくりを知らない人はどう入力すればいいかわかりません。
 そこで、**エラーメッセージ**を表示してあげましょう。
 
-エラーメッセージについては["ユーザーに優しいエラーメッセージ"をデザインする方法 | アドビ UX 道場 ](https://blog.adobe.com/jp/publish/2022/07/25/cc-web-error-message-design-ux)にまとまっています。エラーメッセージを考えるうえで最も重要なのは、次のポイントです。
+エラーメッセージを考えるうえで重要なポイントは[「ユーザーに優しいエラーメッセージ」をデザインする方法](https://blog.adobe.com/jp/publish/2022/07/25/cc-web-error-message-design-ux)にまとまっています。
+最も重要なのは、次のポイントです。
 
 > **ユーザーに解決策を提示する**
 
 エラーメッセージを表示するのは、ユーザに正しい操作や入力を行ってほしいからです。
 "こうすればいいんだよ"と解決策を提示してあげましょう。
+
+さて、エラーメッセージを考えてみましょう。
 
 /// details | エラーメッセージを考えてみよう
     type: example
@@ -256,6 +259,10 @@ Exception in thread "main" java.util.NoSuchElementException: No value present
   - 😀 "男の子"じゃだめで、"男"って入力すればいいんだね！
 
 ///
+
+---
+
+エラーメッセージが決まったところで、エラーメッセージを出力しましょう。
 
 /// admonition | サンプルコード
 
@@ -293,7 +300,7 @@ Exception in thread "main" java.util.NoSuchElementException: No value present
 
 次に"生年月日"の入力パターンを考えます。
 
-**まず、正しさを整理します。**分かることから考えるとそれ以外のことが見えてきます。
+**まず、正しさを整理します。**わかることから考えるとそれ以外のことが見えてきます。
 
 "正しい生年月日"とは何でしょうか？
 難しく考える必要はありません。
@@ -301,7 +308,9 @@ Exception in thread "main" java.util.NoSuchElementException: No value present
 
 では、存在する日付を入力してもらえば十分でしょうか？
 
-![Image title](https://2.bp.blogspot.com/-nMjuko9tXGc/Ut0BV0jJHkI/AAAAAAAAdW0/tRb8t3PEY28/s800/kangaeruhito.png){ width="120" }
+<figure markdown>
+  ![Image title](https://2.bp.blogspot.com/-nMjuko9tXGc/Ut0BV0jJHkI/AAAAAAAAdW0/tRb8t3PEY28/s800/kangaeruhito.png){ width="120" }
+</figure>
 
 常識の範囲内でも、日付を表現するいろんな形式があります。
 問題文にもあった"**西暦**"、役所の書類で使われがちな"**和暦**"、少なくとも２つの表現方法は知っていますね。
@@ -350,7 +359,7 @@ Exception in thread "main" java.util.NoSuchElementException: No value present
 
 [ISO 8601は、日付と時刻の表記に関するISOの国際規格である。この規格の主眼は、日付と時刻の記述順序が国や文化によってまちまちである[注 1][1]ものを、大→小の順序（ビッグエンディアン big-endian）を貫徹して、日付・時刻の記述順序をただ一種類に標準化していることにある[2]。また、時刻表現は24時制だけに限定している。](https://ja.wikipedia.org/wiki/ISO_8601)
 
-wikipediaが丁寧で分かりやすかった。
+wikipediaが丁寧でわかりやすかった。
 
 |          | 日付のみ   | 日付時刻               | 日付時刻＋タイムゾーン    |
 | -------- | ---------- | ---------------------- | ------------------------- |
@@ -366,7 +375,7 @@ wikipediaが丁寧で分かりやすかった。
 ```java title="CalcYakudosiApp.java" hl_lines="8 18-19 25-28"
   public static void main(String[] args) {
     if (args.length != 2) {
-      System.out.println("引数に二つの文字列を入力してください。");
+      System.out.println("引数に２つの文字列を入力してください。");
       return;
     }
 

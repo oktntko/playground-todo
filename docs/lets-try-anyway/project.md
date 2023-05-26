@@ -21,7 +21,7 @@ drwxr-xr-x - username xx XXX 00:00 my-todo
 - ++windows+r++ から `\\wsl.localhost\Ubuntu\home\%USERNAME%` を入力する.
   - ![mkdir-by-gui-01](mkdir-by-gui-01.png){ width="240" }
   - ![mkdir-by-gui-02](mkdir-by-gui-02.png){ width="240" }
-- ++ctrl+shift+n++ でフォルダを作成し フォルダ名に"my-todo"を入力する.
+- ++ctrl+shift+n++ でフォルダを作成し フォルダ名に`my-todo`を入力する.
   - ![mkdir-by-gui-03](mkdir-by-gui-03.png){ width="320" }
   - ![mkdir-by-gui-04](mkdir-by-gui-04.png){ width="320" }
 - 画面を確認する.
@@ -31,7 +31,7 @@ drwxr-xr-x - username xx XXX 00:00 my-todo
 
 - **コマンドライン**で操作してもらおうとすると...
   - 複雑な操作でも**テキストだけで手順を書ける**。
-  - **操作の履歴が残る**ので、ミスがあったときに原因が分かりやすい。
+  - **操作の履歴が残る**ので、ミスがあったときに原因がわかりやすい。
 - **画面から**操作してもらおうとすると...
   - 複雑な操作になると画像なども駆使しないと手順が書けない。
   - 操作の履歴が残らないので、画面キャプチャを取りながら進める必要がある。キャプチャを取らないとミスった原因が追えない。
@@ -66,9 +66,9 @@ Git の操作に触れるのはここだけです。コミットをしたりブ�
    - ![project-github-confirm-00](project-github-confirm-00.png){ width="240" }
 4. エクスプローラーのアドレスバーに `\\wsl.localhost\Ubuntu\home\%USERNAME%\my-todo` を入力する.
 5. "フォルダの選択"をクリックする.
-6. "サイトにファイルの読み取りを許可しますか？"＞ファイルを表示する.
+6. 「サイトにファイルの読み取りを許可しますか？」 ＞ ファイルを表示する.
    - ![project-github-confirm-01](project-github-confirm-01.png){ width="320" }
-7. ""my-todo"に変更を保存しますか？"＞変更を保存.
+7. 「「my-todo」に変更を保存しますか？」 ＞ 変更を保存.
    - ![project-github-confirm-02](project-github-confirm-02.png){ width="320" }
 
 /// admonition | 不要なファイルを削除しよう

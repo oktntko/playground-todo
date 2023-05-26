@@ -5,7 +5,9 @@
 
 え？低スペックじゃない？そもそもスペックが何かわからない？
 
-![Image title](https://4.bp.blogspot.com/-RKhIfDAFOIU/VZt5Qbb3OSI/AAAAAAAAu2c/2_zDuFxELLc/s800/akachan_ha_nyuushi.png){ width="120" }
+<figure markdown>
+  ![Image title](https://4.bp.blogspot.com/-RKhIfDAFOIU/VZt5Qbb3OSI/AAAAAAAAu2c/2_zDuFxELLc/s800/akachan_ha_nyuushi.png){ width="120" }
+</figure>
 
 では最初に、自分のパソコンのスペックを確認しましょう。
 
@@ -44,7 +46,7 @@ AMDとかIntelとかを消して検索しましょう。
 ///
 
 /// admonition | [わかりやすい！CPUの表記の見方](https://student-notepc.com/cpu_how.html)
-CPUの名前だけでスペックがいいか悪いかある程度分かります。数字が大きいほどいい！
+CPUの名前だけでスペックがいいか悪いかある程度わかります。数字が大きいほどいい！
 こちらのサイトでわかりやすく解説されているので、" CPU なんてはじめて聞いたわ！"って人は見ておくことをおすすめします。
 ///
 
@@ -71,7 +73,7 @@ CPUの名前だけでスペックがいいか悪いかある程度分かりま�
      - 出ている数値が容量
 - SSD か HDD か
   1. ++windows+r++ で ファイル名を指定して実行画面を開く
-  2. "dfrgui.exe"を入力してOK
+  2. `dfrgui.exe`を入力してOK
      - メディアの種類が
        - ソリッドステートドライブ => SSD
        - ハードディスクドライブ => HDD
@@ -99,7 +101,7 @@ CPUの名前だけでスペックがいいか悪いかある程度分かりま�
 
 [^1]: パソコンは３年でガタが来るので気軽に選んでいいです。
 
-このリポジトリの Windows 向けに説明を書いています。
+このリポジトリは Windows 向けに説明を書いています。
 そのため、OSは`Windows 10`か`Windows 11`が推奨です。
 解説は最適化されていませんが、`Mac`や`Linux`を選んでも問題はありません。
 

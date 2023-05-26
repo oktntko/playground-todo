@@ -11,11 +11,13 @@
 - ハードウェアは触れられる部分、つまり"もの"です。
 - ソフトウェアは触れられない部分にあり、中で動くものです。
 
-![pc-hardware-software](pc-hardware-software.png)
+<figure markdown>
+  ![pc-hardware-software](pc-hardware-software.png)
+</figure>
 
 ///
 
 /// admonition | OS(Operating System)
-OSは例えばWindowsやMac、Linuxといったものです。  
+ご存じ Windows や Mac 、ウェブでは避けて通れない Linux があります。  
 ソフトウェアの中でも特別な地位にいて、ハードとソフトの仲立ち役をします。  
 ///

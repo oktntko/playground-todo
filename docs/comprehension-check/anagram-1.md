@@ -1,6 +1,6 @@
 # ❔ アナグラム (目標⏰: 20分)
 
-二つの文字列が同じ文字から構成されるかどうか判断し、同じなら`true`を違うなら`false`を出力すること。  
+２つの文字列が同じ文字から構成されるかどうか判断し、同じなら`true`を違うなら`false`を出力すること。  
 ただし、以下のルールを満たすこと。
 
 - 半角スペースの有無の違いは無視すること。
@@ -32,7 +32,7 @@ public class AnagramApp {
 
   public static void main(String[] args) {
     if (args.length != 2) {
-      System.out.println("引数に二つの文字列を入力してください。");
+      System.out.println("引数に２つの文字列を入力してください。");
       return;
     }
 
