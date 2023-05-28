@@ -7,7 +7,7 @@ nav:
       - lets-try-anyway/index.md
       - いいパソコンを使おう: lets-try-anyway/pc.md
       - Windows の設定を確認しよう: lets-try-anyway/windows.md
-      - 開発ツールをインストールしよう: lets-try-anyway/tools.md
+      - ツールをインストールしよう: lets-try-anyway/tools.md
       - 開発環境を作ろう: lets-try-anyway/env.md
       - プロジェクトを作ろう: lets-try-anyway/project.md
   - 理解度を確認しよう:
@@ -19,12 +19,14 @@ nav:
       - 厄年計算: comprehension-check/yakudosi-1.md
       - 厄年計算の解説: comprehension-check/yakudosi-2.md
   - コンソールで動かそう:
-      - 今これからどんなものを作るの？: run-in-console/mock.md
-      - 対話型アプリをコンソールで作ろう: run-in-console/mock.md
-      - ToDoをアプリに保存しよう: run-in-console/mock.md
-      - データベースの基本: run-in-console/mock.md
-      - ToDoをデータベースに保存しよう: run-in-console/mock.md
-      - 見た目にこだわろう: run-in-console/mock.md
+      - run-in-console/index.md
+      - 対話型アプリを試そう: run-in-console/interactive-app.md
+      - アプリの基礎を作ろう: run-in-console/base-app-1.md
+      - アプリの基礎の解説: run-in-console/base-app-2.md
+      - ファイルを使おう: run-in-console/use-file.md
+      - データベースの基本: run-in-console/database-base.md
+      - データベースを使おう: run-in-console/use-database.md
+      - 見た目にこだわろう: run-in-console/appearance-app.md
   - ウェブシステム化しよう: mock.md
   - ウェブ画面を作ろう: mock.md
   - 仕様書を書こう: mock.md
@@ -45,6 +47,7 @@ theme:
     - header.autohide # タイトルバーが隠れるようにする
     - navigation.indexes # セクション インデックス ページが有効になっている場合、ドキュメントをセクションに直接添付できます。これは、概要ページを提供する場合に特に便利です
     - navigation.footer # フッターには、現在のページの前のページと次のページへのリンクを含めることができます。
+    - content.code.annotate # コードの注釈
 
 extra_css:
   - assets/main.css
@@ -57,9 +60,6 @@ markdown_extensions:
   - pymdownx.blocks.admonition # メモ、ヒント、警告 https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
   - pymdownx.blocks.details # 折り畳みブロック https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/details/
   - pymdownx.superfences # ネスト
-  - pymdownx.emoji: # アイコンと絵文字 https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.keys # キーコード
   - pymdownx.highlight: # コードのハイライト
       linenums: true
@@ -71,7 +71,13 @@ markdown_extensions:
   - footnotes # 注釈
   - toc:
       permalink: True
+      title: 目次
   - mdx_truly_sane_lists: # スペース2個のインデントをリストのネストとして認識させたい https://stakiran.hatenablog.com/entry/2018/08/02/202816
       nested_indent: 2
   - attr_list
   - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

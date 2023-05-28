@@ -18,13 +18,18 @@ public class MyPrompt {
 
   public static void showDemo() throws IOException {
 
-    MyPrompt.input("input", "");
+    var input = MyPrompt.input("文字列の入力を受け付ける. >", "");
+    System.out.println("入力された文字列は[" + input + "]です。");
 
-    MyPrompt.select("select", List.of("a", "b", "c"));
+    var select = MyPrompt.select("ひとつだけ選択できる. 上下で移動、Enterで決定.", List.of("a", "b", "c"));
+    System.out.println("選択されたListのindexは[" + select + "]です。");
 
-    MyPrompt.selectMultiple("selectMultiple", List.of("1", "2", "3"));
+    var selectMultiple = MyPrompt.selectMultiple("複数選択できる. 上下で移動、Spaceで選択、Enterで決定.",
+        List.of("α", "β", "γ"));
+    System.out.println("選択されたListのindexは" + selectMultiple + "です。");
 
-    MyPrompt.confirm("confirm", ConfirmChoice.ConfirmationValue.NO);
+    var confirm = MyPrompt.confirm("確認する. (YESかNOか)", ConfirmChoice.ConfirmationValue.NO);
+    System.out.println("確認結果は[" + confirm + "]です。");
   }
 
   public static String input(String message) throws IOException {
@@ -48,7 +53,8 @@ public class MyPrompt {
     var map = prompt.prompt(builder.addPrompt().build());
     var result = (InputResult) map.get(name);
 
-    return result.getInput();
+    var input = result.getInput();
+    return input == null ? "" : input;
   }
 
   public static int select(String message, List<String> options) throws IOException {
