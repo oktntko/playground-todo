@@ -38,9 +38,9 @@ public class CalcYakudosiApp {
       int 生年 = 生年月日をチェックして生年に変換(args[0]);
       Sex 性別 = 性別をチェックしてEnumに変換(args[1]);
 
-      List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+      List<Integer> 厄年齢List = find厄年齢List(性別);
 
-      for (Integer 厄年齢 : 厄年齢リスト) {
+      for (Integer 厄年齢 : 厄年齢List) {
         String 年齢 = String.format("%2s", String.valueOf(厄年齢));
         int 厄年 = 生年 + 厄年齢 - 1;
         System.out.println(年齢 + " 歳 : " + 厄年 + " 年");
@@ -57,7 +57,7 @@ public class CalcYakudosiApp {
     return LocalDate.parse(input, DateTimeFormatter.ISO_LOCAL_DATE).getYear(); // yyyy-MM-dd
   }
 
-  public static List<Integer> find厄年齢リスト(Sex 性別) {
+  public static List<Integer> find厄年齢List(Sex 性別) {
     if (性別 == 性別.男) {
       return List.of(4, 25, 42, 61); // 男性
     } else {
@@ -119,9 +119,9 @@ TODO: 動画
         int 生年 = 生年月日をチェックして生年に変換(args[0]);
         Sex 性別 = 性別をチェックしてEnumに変換(args[1]);
 
-        List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+        List<Integer> 厄年齢List = find厄年齢List(性別);
 
-        for (Integer 厄年齢 : 厄年齢リスト) {
+        for (Integer 厄年齢 : 厄年齢List) {
           String 年齢 = String.format("%2s", String.valueOf(厄年齢));
           int 厄年 = 生年 + 厄年齢 - 1;
           System.out.println(年齢 + " 歳 : " + 厄年 + " 年");
@@ -139,8 +139,7 @@ TODO: 動画
 
 ただ、このままだと、
 
-①VSCode の Run から実行すると実行時引数を入力できないので、引数のエラーメッセージが表示されて終わり
-> 引数に２つの文字列を入力してください。  
+①VSCode の Run から実行すると実行時引数を入力できないので、引数のエラーメッセージ`引数に２つの文字列を入力してください。`が表示されて終わり
 
 ②コマンドライン`java src/main/java/playground/todo/CalcYakudosiApp.java "1999-12-12" "男"`から実行すると、無限に同じ結果を表示し続けて終わらない
 
@@ -175,7 +174,7 @@ TODO: 動画
 ただ、使いづらく記載が冗長になります。
 こういうときはライブラリの力を借ります。
 
-/// admonition | ライブラリ と OSS
+/// admonition | ライブラリ と OSS と パッケージマネージャー
 [consoleui](https://github.com/awegmann/consoleui)
 
 ・・・
@@ -198,9 +197,9 @@ TODO: 動画
         String str性別 = MyPrompt.input("性別を入力してください。(男/女)");
         Sex 性別 = 性別をチェックしてEnumに変換(str性別);
 
-        List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+        List<Integer> 厄年齢List = find厄年齢List(性別);
 
-        for (Integer 厄年齢 : 厄年齢リスト) {
+        for (Integer 厄年齢 : 厄年齢List) {
           String 年齢 = String.format("%2s", String.valueOf(厄年齢));
           int 厄年 = 生年 + 厄年齢 - 1;
           System.out.println(年齢 + " 歳 : " + 厄年 + " 年");
@@ -273,11 +272,11 @@ TODO: 動画
         String str性別 = MyPrompt.input("性別を入力してください。(男/女)");
         Sex 性別 = 性別をチェックしてEnumに変換(str性別);
 
-        List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+        List<Integer> 厄年齢List = find厄年齢List(性別);
 
         System.out.println("あなたの厄年は...");
 
-        for (Integer 厄年齢 : 厄年齢リスト) {
+        for (Integer 厄年齢 : 厄年齢List) {
           String 年齢 = String.format("%2s", String.valueOf(厄年齢));
           int 厄年 = 生年 + 厄年齢 - 1;
           System.out.println(年齢 + " 歳 : " + 厄年 + " 年");

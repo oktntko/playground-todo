@@ -2,9 +2,9 @@
 
 入力値を考慮できているか？
 
-## 💡 ゴールまでの筋道を立ててコードに書いて動きを確認して見た目を整える
+## 💡 ゴールまでの道筋を立ててコードに書いて動きを確認して見た目を整える
 
-いきなりコードを書き始めるのではなく、ゴールまでの筋道を考えましょう。
+いきなりコードを書き始めるのではなく、ゴールまでの道筋を考えましょう。
 しかし、日付の計算は頭がこんがらがりやすいです。さらに、"数え年"なる聞きなれない言葉も出てきました。
 
 こういうときは、**サンプルデータを使って考えましょう。**
@@ -36,11 +36,11 @@
 | 61 歳 | 2059 年 |
 
 加算する数字が違うだけですね。
-これでゴールまでの筋道が立てられそうです。
+これでゴールまでの道筋が立てられそうです。
 
 1. "生年月日"から"年"を数値として抽出する＝`生年`とする
-2. 性別によって加算するデータを切り替える＝`厄年齢リスト`とする
-3. `厄年齢リスト`を繰り返し処理する＝ひとつずつのデータは`厄年齢`とする
+2. 性別によって加算するデータを切り替える＝`厄年齢List`とする
+3. `厄年齢List`を繰り返し処理する＝ひとつずつのデータは`厄年齢`とする
    - `生年`＋`厄年齢`－１を出力する
 
 変数名まで決められました。また、表を使って考えたことで、表形式で出力すると分かりやすいということにも気がつきました。
@@ -63,16 +63,16 @@
 
     int 生年 = Integer.valueOf(生年月日.substring(0, 4));
 
-    List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+    List<Integer> 厄年齢List = find厄年齢List(性別);
 
-    for (Integer 厄年齢 : 厄年齢リスト) {
+    for (Integer 厄年齢 : 厄年齢List) {
       String 年齢 = String.format("%2s", String.valueOf(厄年齢));
       int 厄年 = 生年 + 厄年齢 - 1;
       System.out.println(年齢 + " 歳 : " + 厄年 + " 年");
     }
   }
 
-  public static List<Integer> find厄年齢リスト(String 性別) {
+  public static List<Integer> find厄年齢List(String 性別) {
     if (性別.equals("男")) {
       return List.of(4, 25, 42, 61); // 男性
     } else {
@@ -81,10 +81,10 @@
   }
 ```
 
-次のループ処理を共通化するために厄年齢リストを決める処理を関数化しています。見た目を整えていますね。
+次のループ処理を共通化するために厄年齢Listを決める処理を関数化しています。見た目を整えていますね。
 
 ```java linenums="12"
-    List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+    List<Integer> 厄年齢List = find厄年齢List(性別);
 ```
 
 `String#format`で年齢をスペースで埋めて、"4 歳"を表示するときにずれないようにしています。見た目を整えていますね。
@@ -192,16 +192,16 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 0, e
 
     int 生年 = Integer.valueOf(生年月日.substring(0, 4));
 
-    List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+    List<Integer> 厄年齢List = find厄年齢List(性別);
 
-    for (Integer 厄年齢 : 厄年齢リスト) {
+    for (Integer 厄年齢 : 厄年齢List) {
       String 年齢 = String.format("%2s", String.valueOf(厄年齢));
       int 厄年 = 生年 + 厄年齢 - 1;
       System.out.println(年齢 + " 歳 : " + 厄年 + " 年");
     }
   }
 
-  public static List<Integer> find厄年齢リスト(Sex 性別) {
+  public static List<Integer> find厄年齢List(Sex 性別) {
     if (性別 == 性別.男) {
       return List.of(4, 25, 42, 61); // 男性
     } else {
@@ -275,9 +275,9 @@ Exception in thread "main" java.util.NoSuchElementException: No value present
 
       int 生年 = Integer.valueOf(生年月日.substring(0, 4));
 
-      List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+      List<Integer> 厄年齢List = find厄年齢List(性別);
 
-      for (Integer 厄年齢 : 厄年齢リスト) {
+      for (Integer 厄年齢 : 厄年齢List) {
         String 年齢 = String.format("%2s", String.valueOf(厄年齢));
         int 厄年 = 生年 + 厄年齢 - 1;
         System.out.println(年齢 + " 歳 : " + 厄年 + " 年");
@@ -350,7 +350,7 @@ Exception in thread "main" java.util.NoSuchElementException: No value present
 
 <figure markdown>
   <figcaption>まだあわてるような時間じゃない</figcaption>
-  ![yakudosi-sendou.png](yakudosi-sendou.png){ width="480" }
+  ![sendou.png](../assets/sendou.png){ width="480" }
 </figure>
 
 西暦表記ってなんですか？`1999年12月12日`も`1999/12/12`も`12.12.1999`も西暦表記です。
@@ -385,9 +385,9 @@ wikipediaが丁寧でわかりやすかった。
       int 生年 = 生年月日をチェックして生年に変換(args[0]);
       Sex 性別 = 性別をチェックしてEnumに変換(args[1]);
 
-      List<Integer> 厄年齢リスト = find厄年齢リスト(性別);
+      List<Integer> 厄年齢List = find厄年齢List(性別);
 
-      for (Integer 厄年齢 : 厄年齢リスト) {
+      for (Integer 厄年齢 : 厄年齢List) {
         String 年齢 = String.format("%2s", String.valueOf(厄年齢));
         int 厄年 = 生年 + 厄年齢 - 1;
         System.out.println(年齢 + " 歳 : " + 厄年 + " 年");

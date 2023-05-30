@@ -24,6 +24,8 @@ nav:
       - アプリの基礎を作ろう: run-in-console/base-app-1.md
       - アプリの基礎の解説: run-in-console/base-app-2.md
       - ファイルを使おう: run-in-console/use-file.md
+      - 期日も管理しよう: run-in-console/add-limit-1.md
+      - 期日も管理しようの解説: run-in-console/add-limit-2.md
       - データベースの基本: run-in-console/database-base.md
       - データベースを使おう: run-in-console/use-database.md
       - 見た目にこだわろう: run-in-console/appearance-app.md
@@ -59,6 +61,7 @@ plugins:
 markdown_extensions:
   - pymdownx.blocks.admonition # メモ、ヒント、警告 https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
   - pymdownx.blocks.details # 折り畳みブロック https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/details/
+  - pymdownx.blocks.definition # 定義 https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/definition/
   - pymdownx.superfences # ネスト
   - pymdownx.keys # キーコード
   - pymdownx.highlight: # コードのハイライト
