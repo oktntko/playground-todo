@@ -313,7 +313,7 @@
   
     <li class="md-nav__item">
       <a href="../lets-try-anyway/tools/" class="md-nav__link">
-        開発ツールをインストールしよう
+        ツールをインストールしよう
       </a>
     </li>
   
@@ -521,6 +521,16 @@
       
         
           
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
         
           
         
@@ -534,10 +544,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-          コンソールで動かそう
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../run-in-console/">コンソールで動かそう</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
@@ -547,13 +563,15 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+          
+            
               
   
   
   
     <li class="md-nav__item">
-      <a href="../run-in-console/mock/" class="md-nav__link">
-        今これからどんなものを作るの？
+      <a href="../run-in-console/interactive-app/" class="md-nav__link">
+        対話型アプリを試そう
       </a>
     </li>
   
@@ -566,8 +584,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../run-in-console/mock/" class="md-nav__link">
-        対話型アプリをコンソールで作ろう
+      <a href="../run-in-console/base-app-1/" class="md-nav__link">
+        アプリの基礎を作ろう
       </a>
     </li>
   
@@ -580,8 +598,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../run-in-console/mock/" class="md-nav__link">
-        ToDoをアプリに保存しよう
+      <a href="../run-in-console/base-app-2/" class="md-nav__link">
+        アプリの基礎の解説
       </a>
     </li>
   
@@ -594,7 +612,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../run-in-console/mock/" class="md-nav__link">
+      <a href="../run-in-console/use-file/" class="md-nav__link">
+        ファイルを使おう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-in-console/add-limit-1/" class="md-nav__link">
+        期日も管理しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-in-console/add-limit-2/" class="md-nav__link">
+        期日も管理しようの解説
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-in-console/database-base/" class="md-nav__link">
         データベースの基本
       </a>
     </li>
@@ -608,8 +668,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../run-in-console/mock/" class="md-nav__link">
-        ToDoをデータベースに保存しよう
+      <a href="../run-in-console/use-database/" class="md-nav__link">
+        データベースを使おう
       </a>
     </li>
   
@@ -622,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../run-in-console/mock/" class="md-nav__link">
+      <a href="../run-in-console/appearance-app/" class="md-nav__link">
         見た目にこだわろう
       </a>
     </li>
@@ -754,7 +814,9 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
   
   
   
@@ -763,7 +825,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目次
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -784,14 +846,14 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    ✅ 早いこと
+    ✅ はやいこと
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    ✅ 分かりやすいこと
+    ✅ わかりやすいこと
   </a>
   
 </li>
@@ -831,28 +893,41 @@
 <ol>
 <li>意図通りであること</li>
 <li>早いこと</li>
-<li>分かりやすいこと</li>
+<li>わかりやすいこと</li>
 </ol>
 <p>３つのポイントを意識して問題に取り組んでください。</p>
 <h3 id="_3">✅ 意図通りであること<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>コードを書く上では、意図通りに動くことが最も重要です。</p>
 <p>車を運転していて、ハンドルを右に切ったのに左に動いたら困ります。
 アクセルを踏んだのに動かなかったら困ります。</p>
-<h3 id="_4">✅ 早いこと<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>"早いこと"も重要です。</p>
-<p>これは、"処理が終わるまでが早い"というプログラム上の話でも、
-プログラムの"完成までが早い"といった仕事の話にも当てはまります。</p>
-<p>どれだけ意図通りに動くとしても、完成までに100年かかってしまったら作る意味がありません。</p>
-<h3 id="_5">✅ 分かりやすいこと<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>そして、一人でコードを書くと忘れがちな"分かりやすいこと"も重要です。</p>
-<p>これは、"中身がわかりやすい"という話でも、レビュアーへの"説明が分かりやすい"、
-出来上がったものの"見た目や操作が分かりやい"といった仕事の話にも当てはまります。</p>
-<p>"分かりやすさ"は自分視点だけでは突き詰められません。</p>
-<p>相手をイメージする視点を忘れてはいけません。
-システムがいったん出来上がったら、</p>
-<p>コードを読むのはだれか？
-システムを使うのはどんな人だろう？</p>
-<p>と考えることでグッと良いものができやすくなります。</p>
+<p>システムはただの道具です。使われてはじめて意味があります。
+使われるためには、使う人の欲求を満たす必要があります。
+意図通りに動くことが欲求を満たす最低条件です。</p>
+<h3 id="_4">✅ はやいこと<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>"はやいこと"も重要です。</p>
+<ul>
+<li>"処理が終わるまでがはやい"というプログラム上の話</li>
+<li>プログラムの"完成までがはやい"という作業のスピードの話</li>
+<li>"決断がはやい"というメンタルの話</li>
+</ul>
+<p>人生の時間は限られています。いたるところで"はやく"することを意識しましょう。</p>
+<h3 id="_5">✅ わかりやすいこと<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>そして、独りでコードを書くと忘れがちな"わかりやすいこと"も重要です。</p>
+<ul>
+<li>コードの"中身がわかりやすい"</li>
+<li>レビュアーへの"説明がわかりやすい"</li>
+<li>出来上がったものの"見た目や操作がわかりやい"</li>
+</ul>
+<p>システム作りは独りでは成り立ちません。相手があってこそです。
+一緒に仕事をする人たち、発注した人たち、実際に使う人たち...。
+そして、未来の自分です。</p>
+<p>"自分以外の誰か"がシステムの価値を高めてくれます。
+その誰かのために"わかりやすさ"が必要なのです。</p>
+<div class="admonition tip">
+<p class="admonition-title">プログラマー三大美徳</p>
+<p>プログラマーには三大美徳と呼ばれるものがあります。 具体的には「怠惰」「短気」「高慢」です。
+有名みたい。調べてみてください。</p>
+</div>
 
 
 
@@ -928,7 +1003,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "header.autohide", "navigation.indexes", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "header.autohide", "navigation.indexes", "navigation.footer", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>

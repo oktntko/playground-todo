@@ -1,0 +1,1468 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../base-app-1/">
+      
+      
+        <link rel="next" href="../use-file/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>アプリの基礎の解説 - Playground Todo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/main.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Playground Todo" class="md-header__button md-logo" aria-label="Playground Todo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Playground Todo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              アプリの基礎の解説
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oktntko/playground-todo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Playground Todo" class="md-nav__button md-logo" aria-label="Playground Todo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Playground Todo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oktntko/playground-todo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        はじめに
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../lets-try-anyway/">とにかく動かしてみよう</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          とにかく動かしてみよう
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/pc/" class="md-nav__link">
+        いいパソコンを使おう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/windows/" class="md-nav__link">
+        Windows の設定を確認しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/tools/" class="md-nav__link">
+        ツールをインストールしよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/env/" class="md-nav__link">
+        開発環境を作ろう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lets-try-anyway/project/" class="md-nav__link">
+        プロジェクトを作ろう
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../comprehension-check/">理解度を確認しよう</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          理解度を確認しよう
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/fizzbuzz-1/" class="md-nav__link">
+        FizzBuzz問題
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/fizzbuzz-2/" class="md-nav__link">
+        FizzBuzz問題の解説
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/anagram-1/" class="md-nav__link">
+        アナグラム
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/anagram-2/" class="md-nav__link">
+        アナグラムの解説
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/yakudosi-1/" class="md-nav__link">
+        厄年計算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/yakudosi-2/" class="md-nav__link">
+        厄年計算の解説
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">コンソールで動かそう</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          コンソールで動かそう
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interactive-app/" class="md-nav__link">
+        対話型アプリを試そう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base-app-1/" class="md-nav__link">
+        アプリの基礎を作ろう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          アプリの基礎の解説
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        アプリの基礎の解説
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    やることを登録する機能を実装する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    やることを表示する機能を実装する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    やることを削除する機能を実装する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    アクションを選択してもらう
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    オブジェクトを選択してもらう
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-file/" class="md-nav__link">
+        ファイルを使おう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-limit-1/" class="md-nav__link">
+        期日も管理しよう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-limit-2/" class="md-nav__link">
+        期日も管理しようの解説
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database-base/" class="md-nav__link">
+        データベースの基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-database/" class="md-nav__link">
+        データベースを使おう
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appearance-app/" class="md-nav__link">
+        見た目にこだわろう
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        ウェブシステム化しよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        ウェブ画面を作ろう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        仕様書を書こう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        試験をしよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        仕様変更をしよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        デプロイしてみよう
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/" class="md-nav__link">
+        振り返り＆今後
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    やることを登録する機能を実装する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    やることを表示する機能を実装する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    やることを削除する機能を実装する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    アクションを選択してもらう
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    オブジェクトを選択してもらう
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">アプリの基礎の解説<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>できましたか？</p>
+<h2 id="_2">やることを登録する機能を実装する<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  actor ユーザ
+  participant system as システム
+
+  ユーザ -&gt;&gt; system: やることを入力する
+  system -&gt;&gt; system: 入力されたやることを登録する</code></pre>
+<ul>
+<li>ユーザはやることを入力する</li>
+<li>システムは入力されたやることを登録する</li>
+</ul>
+<p>ここから始めましょう。</p>
+<ul>
+<li>ユーザはやることを入力する</li>
+</ul>
+<p>これは <code>MyPrompt#input</code> を使えばいいですね。</p>
+<ul>
+<li>システムは入力されたやることを登録する</li>
+</ul>
+<p>どこに登録しますか？Listに保存しておきましょう。</p>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FirstApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">AnsiConsole</span><span class="p">.</span><span class="na">systemInstall</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;📝 Welcome Back, My To-Do!&quot;</span><span class="p">);</span>
+
+<span class="hll"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todoList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">input</span><span class="p">(</span><span class="s">&quot;やることを入力してください &gt;&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">      </span><span class="n">todoList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">todo</span><span class="p">);</span>
+</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\&quot;Ctrl + C\&quot;で停止してください。&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<p>簡単でした。<code>It's so easy.🎉</code></p>
+<h2 id="_3">やることを表示する機能を実装する<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  actor ユーザ
+  participant system as システム
+
+  system -&gt;&gt; ユーザ: 登録済みのやることを表示する
+  ユーザ -&gt;&gt; ユーザ: 入力したやることを見ることができる</code></pre>
+<ul>
+<li>登録済みのやることを表示する</li>
+<li>入力したやることを見ることができる</li>
+</ul>
+<p><code>todoList</code>を<code>System.out</code>にぶち込むだけです。</p>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gd">-      System.out.println(&quot;\&quot;Ctrl + C\&quot;で停止してください。&quot;);</span>
+<span class="gi">+      System.out.println(todoList);</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<h2 id="_4">やることを削除する機能を実装する<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  actor ユーザ
+  participant system as システム
+
+  ユーザ -&gt;&gt; system: やることが完了したら、入力したやることを消す
+  system -&gt;&gt; system: 登録済みのやることを削除する</code></pre>
+<ul>
+<li>やることが完了したら、入力したやることを消す</li>
+<li>登録済みのやることを削除する</li>
+</ul>
+<p>完了するには、ユーザが、入力したやることを選択できればいいんですが、
+どうやって選択させればいいでしょうか？</p>
+<p><code>MyPrompt#select</code>がちょうどよさそうです。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FirstApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">AnsiConsole</span><span class="p">.</span><span class="na">systemInstall</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;📝 Welcome Back, My To-Do!&quot;</span><span class="p">);</span>
+
+<span class="hll"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todoList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">input</span><span class="p">(</span><span class="s">&quot;やることを入力してください &gt;&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="n">todoList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">todo</span><span class="p">);</span>
+
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
+
+<span class="hll"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&quot;完了したやることを選択してください&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">todoList</span><span class="p">);</span>
+</span><span class="hll"><span class="w">      </span><span class="n">todoList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+</span><span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🖨️ 出力結果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>@/tmp/cp_7dfchp54jh4vsuotteb7aekcd.argfile<span class="w"> </span>playground.todo.FirstApp<span class="w">      </span>
+📝<span class="w"> </span>Welcome<span class="w"> </span>Back,<span class="w"> </span>My<span class="w"> </span>To-Do!
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>課題を提出する
+<span class="o">[</span>課題を提出する<span class="o">]</span>
+?<span class="w"> </span>完了したやることを選択してください<span class="w"> </span>課題を提出する
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>家賃を支払う
+<span class="o">[</span>家賃を支払う<span class="o">]</span>
+?<span class="w"> </span>完了したやることを選択してください<span class="w"> </span>家賃を支払う
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>１か月１万円で過ごす
+<span class="o">[</span>１か月１万円で過ごす<span class="o">]</span>
+?<span class="w"> </span>完了したやることを選択してください
+❯<span class="w"> </span>１か月１万円で過ごす
+</code></pre></div></td></tr></table></div>
+</div>
+<p><strong>やることが一向に増えないToDoアプリの完成です。</strong>
+理想的な状態とも言えますが、システムとしては使いものになりません。</p>
+<p>なぜでしょうか？
+難しくないありません。ただ、きちんと説明はできないのではないでしょうか？</p>
+<p>詳しく解説をします。</p>
+<p>今の状態で実現できているのは、やることＡに対する一連の動きだけです。</p>
+<ol>
+<li>やることＡが増える</li>
+<li>やることＡが完了する</li>
+</ol>
+<p>順番は必ず①増える➡②完了するになります。
+これ自体はプログラムの実行順序とあっています。</p>
+<p><strong>しかし現実には、やることＡが完了するまでの間に、やることＢやＣが増えます。</strong>
+ＢやＣが増える間にやることＡが完了することもあります。</p>
+<ol>
+<li>やることＡが増える</li>
+<li>やることＢが増える</li>
+<li>やることＡが完了する</li>
+<li>やることＣが増える</li>
+<li>やることＢが完了する</li>
+<li>やることＣが完了する</li>
+</ol>
+<p>やることＡだけを見れば、増える➡完了するの流れはシーケンシャル（一連の動き）です。
+しかし、「やること」全体を考えると、必ずしも増える➡完了するとはなりません。
+増える➡増える➡完了する➡・・・かもしれないのです。</p>
+<p>ユーザがToDoアプリを利用する場面（＝<strong>ユースケース</strong>といいます）が複数ある場合、
+システム側からすると、なんでこのアプリが使われたのか？が分かりません。</p>
+<p>ユースケースを整理するための図がUMLにあります。これをユースケース図といいます。</p>
+<pre class="mermaid"><code>flowchart LR
+
+A{ユーザ}
+
+A --- B[やることが増えるたらやることを入力する]
+A --- C[やることが完了したらやることを消す]
+
+subgraph ToDoアプリ
+  B
+  C
+end
+</code></pre>
+<p>ではどうすればいいか？やることが増えたのか完了したのか、<br />
+<strong>最初にユーザがアクションを選べるようにしましょう。</strong></p>
+<p>シーケンス図に条件分岐を加えましょう。</p>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  actor ユーザ
+  participant system as システム
+
+  loop ;;
+
+    alt やることが増えた
+      ユーザ -&gt;&gt; system: やることを入力する
+      system -&gt;&gt; system: 入力されたやることを登録する
+
+    else やることが完了した
+      system -&gt;&gt; ユーザ: 登録済みのやることを表示する
+      ユーザ -&gt;&gt; ユーザ: 入力したやることを見ることができる
+
+      ユーザ -&gt;&gt; system: 入力したやることを選ぶ
+      system -&gt;&gt; system: 登録済みのやることを削除する
+
+    end
+  end</code></pre>
+<p>シーケンス図の解説</p>
+<p>これをコードに書いていきましょう。</p>
+<h2 id="_5">アクションを選択してもらう<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>アクションを選択してもらうために、 <code>if文</code>を追加しましょう。</p>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FirstApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">INDEX_増えた</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span class="hll"><span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">INDEX_完了した</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&quot;やることが増えましたか？やることが完了しましたか？&quot;</span><span class="p">,</span>
+</span><span class="w">          </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;増えた&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;完了した&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">INDEX_増えた</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">input</span><span class="p">(</span><span class="s">&quot;やることを入力してください &gt;&quot;</span><span class="p">);</span>
+<span class="hll"><span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">todo</span><span class="p">);</span>
+</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&quot;完了したやることを選択してください&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">todoList</span><span class="p">);</span>
+</span><span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🖨️ 出力結果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>@/tmp/cp_7dfchp54jh4vsuotteb7aekcd.argfile<span class="w"> </span>playground.todo.FirstApp
+📝<span class="w"> </span>Welcome<span class="w"> </span>Back,<span class="w"> </span>My<span class="w"> </span>To-Do!
+?<span class="w"> </span>やることが増えましたか？やることが完了しましたか？<span class="w"> </span>増えた
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>やることＡ
+?<span class="w"> </span>やることが増えましたか？やることが完了しましたか？<span class="w"> </span>増えた
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>やることＢ
+?<span class="w"> </span>やることが増えましたか？やることが完了しましたか？<span class="w"> </span>完了した
+?<span class="w"> </span>完了したやることを選択してください<span class="w"> </span>やることＡ
+?<span class="w"> </span>やることが増えましたか？やることが完了しましたか？<span class="w"> </span>増えた
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>やることＣ
+?<span class="w"> </span>やることが増えましたか？やることが完了しましたか？<span class="w"> </span>完了した
+?<span class="w"> </span>完了したやることを選択してください<span class="w"> </span>やることＢ
+?<span class="w"> </span>やることが増えましたか？やることが完了しましたか？<span class="w"> </span>完了した
+?<span class="w"> </span>完了したやることを選択してください<span class="w"> </span>やることＣ
+</code></pre></div></td></tr></table></div>
+</div>
+<p>これで完成です！</p>
+<p style="font-size: 24px; text-align: center; font-weight: bold;">ちょっと待ってください！</p>
+
+<figure>
+<figcaption>まだあわてるような時間じゃない</figcaption>
+<p><img alt="sendou.png" src="../../assets/sendou.png" width="480" /></p>
+</figure>
+<p>やることが増えたときかやることが完了したときだけ、このアプリを使うのでしょうか？
+アプリとは関係なく、そもそも「やることリスト」を作る意味はなんでしょうか？</p>
+<h2 id="_6">オブジェクトを選択してもらう<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>よし、今日やることはなんだったっけ？</p>
+</blockquote>
+<p><strong>ただやることを確認する</strong>という使い方もありますね。</p>
+<p>ユースケース図に追加しましょう。</p>
+<pre class="mermaid"><code>flowchart LR
+
+A{ユーザ}
+
+A --- B[やることを確認する]
+A --- C[やることが増えるたらやることを入力する]
+A --- D[やることが完了したらやることを消す]
+
+subgraph ToDoアプリ
+  B
+  C
+  D
+end
+</code></pre>
+<p>シーケンス図では、やることを表示するタイミングを前に持ってきました。</p>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  actor ユーザ
+  participant system as システム
+
+  loop ;;
+
+    system -&gt;&gt; ユーザ: 登録済みのやることを表示する
+    ユーザ -&gt;&gt; ユーザ: 入力したやることを見ることができる
+
+    alt やることが増えた
+      ユーザ -&gt;&gt; system: やることを入力する
+      system -&gt;&gt; system: 入力されたやることを登録する
+
+    else やることが完了した
+      ユーザ -&gt;&gt; system: 入力したやることを選ぶ
+      system -&gt;&gt; system: 登録済みのやることを削除する
+
+    end
+  end</code></pre>
+<p>最初にやることが見えるようになりました。
+強引に持ってきましたが、OOUIといいます。
+<a href="https://www.concentinc.jp/design_research/2021/07/ooui/">マンガでわかるOOUIの利点</a></p>
+<p>ウェブの世界には画面（ページ）があります。
+一般にトップページ➡一覧ページ➡詳細ページと遷移します。</p>
+<p>やや強引に一覧ページを最初にもって来たのはそのためです。</p>
+<div class="admonition">
+<p class="admonition-title">サンプルコード</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FirstApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todoList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="hll"><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;➕ やることが増えた&quot;</span><span class="p">;</span>
+</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">      </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span class="hll"><span class="w">      </span><span class="n">menu</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
+</span><span class="hll"><span class="w">      </span><span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">MENU_ADD</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&quot;あなたのやることリスト&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">menu</span><span class="p">);</span>
+</span><span class="hll"><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">todo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">newToDo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">input</span><span class="p">(</span><span class="s">&quot;やることを入力してください &gt;&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newToDo</span><span class="p">);</span>
+
+<span class="hll"><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">confirm</span><span class="p">(</span><span class="s">&quot;「&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;」は完了しましたか？&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">          </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🖨️ 出力結果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span>java<span class="w"> </span>@/tmp/cp_7dfchp54jh4vsuotteb7aekcd.argfile<span class="w"> </span>playground.todo.FirstApp
+📝<span class="w"> </span>Welcome<span class="w"> </span>Back,<span class="w"> </span>My<span class="w"> </span>To-Do!
+?<span class="w"> </span>あなたのやることリスト。<span class="w"> </span>完了したやることを選んでください。<span class="w"> </span>➕<span class="w"> </span>やることを追加する
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>課題を提出する
+?<span class="w"> </span>あなたのやることリスト。<span class="w"> </span>完了したやることを選んでください。<span class="w"> </span>➕<span class="w"> </span>やることを追加する
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>家賃を支払う
+?<span class="w"> </span>あなたのやることリスト。<span class="w"> </span>完了したやることを選んでください。<span class="w"> </span>課題を提出する
+?<span class="w"> </span>「課題を提出する」は完了しましたか？<span class="w"> </span>yes
+?<span class="w"> </span>あなたのやることリスト。<span class="w"> </span>完了したやることを選んでください。<span class="w"> </span>➕<span class="w"> </span>やることを追加する
+?<span class="w"> </span>やることを入力してください<span class="w"> </span>&gt;<span class="w"> </span>１か月１万円で過ごす
+?<span class="w"> </span>あなたのやることリスト。<span class="w"> </span>完了したやることを選んでください。
+❯<span class="w"> </span>家賃を支払う
+<span class="w">  </span>１か月１万円で過ごす
+<span class="w">  </span>➕<span class="w"> </span>やることを追加する
+</code></pre></div></td></tr></table></div>
+</div>
+<p style="font-size: 24px; text-align: center; font-weight: bold;">やっと完成！🎉</p>
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<div class="admonition">
+<p class="admonition-title">やり方は一つではない</p>
+<p><code>MyPrompt</code>がなくても、やることを出力するときに番号も一緒に出力して、
+番号をユーザに入力してもらう方法もあります。
+重要なのは、やり方は一つではないということです。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="m">1</span>:<span class="w"> </span>課題を提出する
+<span class="m">2</span>:<span class="w"> </span>家賃を支払う
+<span class="m">3</span>:<span class="w"> </span>１か月１万円で過ごす
+?<span class="w"> </span>完了したやることの番号を入力してください<span class="o">(</span><span class="m">1</span>-3<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<p><a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../base-app-1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: アプリの基礎を作ろう" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                アプリの基礎を作ろう
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../use-file/" class="md-footer__link md-footer__link--next" aria-label="Next: ファイルを使おう" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ファイルを使おう
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "header.autohide", "navigation.indexes", "navigation.footer", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
