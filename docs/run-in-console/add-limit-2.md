@@ -1,4 +1,4 @@
-# 期日も管理しようの解説
+# 期日も管理しよう
 
 今回、ゴールは明確でした。
 
@@ -45,7 +45,7 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 
 とっつきやすそうなところから順番に対応していきます。
 
-## どうやってファイルへ書き込んで読み込むか？
+### どうやってファイルへ書き込んで読み込むか？
 
 **CSVファイル形式 or TSVファイル形式**を使います。
 気づくか気づかないかというより、知っているか知らないかです。
@@ -106,7 +106,7 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 - LocalDateUtils nullの扱い
 ///
 
-## 型が合わなくなったメニュー「追加」をどうするか？
+### 型が合わなくなったメニュー「追加」をどうするか？
 
 やることも`String`、追加するためのメニューも`String`だったのでおなじListに入れられました。
 その関係が崩れてしまいました。型が違うといわれてしまいます。
@@ -139,7 +139,7 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 
 ///
 
-## 完了を確認するメッセージをどうするか？
+### 完了を確認するメッセージをどうするか？
 
 ```diff
 -      } else if (MyPrompt.confirm("「" + todo + "」は完了しましたか？",
@@ -147,7 +147,7 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
           ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
 ```
 
-## やることを選ぶ UI (`MyPrompt#select`) をどうするか？
+### やることを選ぶ UI (`MyPrompt#select`) をどうするか？
 
 まず、`MyPrompt#select` です。素直にエラーを消していけばいいだけですね。
 
@@ -181,7 +181,7 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 
 あとは期日の入力だけです！
 
-## 期日の入力 (`MyPrompt#input`) をどうするか？
+### 期日の入力 (`MyPrompt#input`) をどうするか？
 
 まずはコンパイルエラーだけ解消しましょう。
 
@@ -244,3 +244,159 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 ## 変更できるようにするってどうやって？
 
 登録と完了(削除)ができているので、それを転用します。
+
+"登録"では、「やること」と「期日」を入力されたら、ToDoインスタンスを返すことができました。  
+"完了"では、選ばれたToDoインスタンスを操作することができました。  
+
+/// admonition | サンプルコード
+
+```java title="FirstApp.java" hl_lines="16-32"
+      if (todo == MENU_ADD) {
+        String yarukoto = MyPrompt.input("やることを入力してください >");
+        try {
+          String strKizitu = MyPrompt.input("期日を入力してください。(例: 2017-07-17)");
+          LocalDate kizitu = LocalDate.parse(strKizitu, DateTimeFormatter.ISO_LOCAL_DATE);
+          System.out.print(kizitu);
+
+          ToDo newToDo = new ToDo(yarukoto, kizitu);
+          todoList.add(newToDo);
+          save(todoList);
+
+        } catch (DateTimeParseException e) {
+          System.err.println("期日はyyyy-MM-dd形式で入力してください。(例: 2017-07-17)");
+        }
+
+      } else if (MyPrompt.confirm("「" + todo.yarukoto() + "」を変更しますか？",
+          ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
+        String yarukoto = MyPrompt.input("やることを入力してください >", todo.yarukoto());
+        try {
+          String strKizitu = MyPrompt.input("期日を入力してください。(例: 2017-07-17)",
+              todo.kizitu().toString());
+          LocalDate kizitu = LocalDate.parse(strKizitu, DateTimeFormatter.ISO_LOCAL_DATE);
+          System.out.print(kizitu);
+
+          ToDo newToDo = new ToDo(yarukoto, kizitu);
+          todoList.set(index, newToDo);
+          save(todoList);
+
+        } catch (DateTimeParseException e) {
+          System.err.println("期日はyyyy-MM-dd形式で入力してください。(例: 2017-07-17)");
+        }
+
+      } else if (MyPrompt.confirm("「" + todo.yarukoto() + "」は完了しましたか？",
+          ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
+        todoList.remove(index);
+        save(todoList);
+      }
+```
+
+///
+
+"変更"では、**選ばれたToDoインスタンスを**入力したToDoインスタンスに置き換えることができました。
+
+/// admonition | サンプルコード
+
+```diff title="登録と変更の違い"
+1c1
+<         String yarukoto = MyPrompt.input("やることを入力してください >");
+---
+>         String yarukoto = MyPrompt.input("やることを入力してください >", todo.yarukoto());
+3c3,4
+<           String strKizitu = MyPrompt.input("期日を入力してください。(例: 2017-07-17)");
+---
+>           String strKizitu = MyPrompt.input("期日を入力してください。(例: 2017-07-17)",
+>               todo.kizitu().toString());
+8c9
+<           todoList.add(newToDo);
+---
+>           todoList.set(index, newToDo);
+```
+
+///
+
+たったこれだけなら共通化できそうです。
+ToDoの操作は同じ処理をすべきなので同じ処理にします。
+
+/// admonition | サンプルコード
+
+```java title="MyPrompt.java"
+  public static ToDo form(String defaultYarukoto, String defaultKizitu) throws IOException {
+    String yarukoto = "";
+    for (;;) {
+      yarukoto = MyPrompt.input("やることを入力してください >", defaultYarukoto);
+      if (yarukoto != null && !yarukoto.isEmpty()) {
+        break;
+      }
+
+      System.err.println("やることは必ず入力してください。");
+    }
+
+    LocalDate kizitu = null;
+    for (;;) {
+      try {
+        String input = MyPrompt.input("期日を入力してください (例: 2017-07-17) >", defaultKizitu);
+        kizitu = LocalDateUtils.converToLocalDate(input);
+        break;
+
+      } catch (DateTimeParseException e) {
+        System.err.println("期日はyyyy-MM-dd形式で入力してください。(例: 2017-07-17)");
+      }
+    }
+
+    return new ToDo(yarukoto, kizitu);
+  }
+```
+
+```java title="FirstApp.java" hl_lines="2 8"
+      if (todo == MENU_ADD) {
+        ToDo newToDo = MyPrompt.form("", "");
+        todoList.add(newToDo);
+        save(todoList);
+
+      } else if (MyPrompt.confirm("「" + todo.yarukoto() + "」を変更しますか？",
+          ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
+        ToDo newToDo = MyPrompt.form(todo.yarukoto(), LocalDateUtils.converToString(todo.kizitu()));
+        todoList.set(index, newToDo);
+        save(todoList);
+
+      } else if (MyPrompt.confirm("「" + todo.yarukoto() + "」は完了しましたか？",
+          ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
+        todoList.remove(index);
+        save(todoList);
+      }
+```
+
+///
+
+/// admonition | サンプルコード
+
+```java title="LocalDateUtils.java"
+package playground.todo;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class LocalDateUtils {
+
+  public static String converToString(LocalDate input) {
+    if (input == null) {
+      return "";
+    } else {
+      return input.toString();
+    }
+  }
+
+  public static LocalDate converToLocalDate(String input) {
+    if (input == null || input.isEmpty()) {
+      return null;
+    } else {
+      return LocalDate.parse(input, DateTimeFormatter.ISO_LOCAL_DATE); // yyyy-MM-dd
+    }
+  }
+}
+
+```
+
+///
+
+<p style="font-size: 24px; text-align: center; font-weight: bold;">完成！🎉</p>

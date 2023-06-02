@@ -56,7 +56,7 @@ wsl --install
 
 6\. "Ubuntu"のウィンドウを閉じて"Windows Terminal"を開く
 
-7\. ++ctrl+,++ で設定を開く
+7\. ++ctrl++ + `,(カンマ)`で設定を開く
 
 8\. スタートアップ＞既定のプロファイルを"Ubuntu"にする
 

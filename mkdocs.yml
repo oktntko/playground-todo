@@ -12,24 +12,30 @@ nav:
       - プロジェクトを作ろう: lets-try-anyway/project.md
   - 理解度を確認しよう:
       - comprehension-check/index.md
-      - 📝 FizzBuzz問題: comprehension-check/fizzbuzz-1.md
-      - 💡 FizzBuzz問題: comprehension-check/fizzbuzz-2.md
-      - 📝 アナグラム: comprehension-check/anagram-1.md
-      - 💡 アナグラムの解説: comprehension-check/anagram-2.md
-      - 📝 厄年計算: comprehension-check/yakudosi-1.md
-      - 💡 厄年計算の解説: comprehension-check/yakudosi-2.md
+      - FizzBuzz問題: comprehension-check/fizzbuzz-1.md
+      - 🈖️ FizzBuzz問題: comprehension-check/fizzbuzz-2.md
+      - アナグラム: comprehension-check/anagram-1.md
+      - 🈖️ アナグラムの解説: comprehension-check/anagram-2.md
+      - 厄年計算: comprehension-check/yakudosi-1.md
+      - 🈖️ 厄年計算の解説: comprehension-check/yakudosi-2.md
   - コンソールで動かそう:
       - run-in-console/index.md
-      - 対話型アプリを試そう: run-in-console/interactive-app.md
+      - 🈠 対話型アプリを試そう: run-in-console/interactive-app.md
       - アプリの基礎を作ろう: run-in-console/base-app-1.md
-      - アプリの基礎の解説: run-in-console/base-app-2.md
-      - ファイルを使おう: run-in-console/use-file.md
+      - 🈖️ アプリの基礎を作ろう: run-in-console/base-app-2.md
+      - ファイルを使おう: run-in-console/use-file-1.md
+      - 🈖️ ファイルを使おう: run-in-console/use-file-2.md
       - 期日も管理しよう: run-in-console/add-limit-1.md
-      - 期日も管理しようの解説: run-in-console/add-limit-2.md
-      - データベースの基本: run-in-console/database-base.md
-      - データベースを使おう: run-in-console/use-database.md
+      - 🈖️ 期日も管理しよう: run-in-console/add-limit-2.md
       - 見た目にこだわろう: run-in-console/appearance-app.md
-  - ウェブシステム化しよう: mock.md
+  - ウェブシステム化しよう:
+      - run-webapp/index.md
+      - 🈠 SpringBoot を試そう: run-webapp/try-springboot.md
+      - SpringBoot を使おう: run-webapp/use-springboot-1.md
+      - 🈖️ SpringBoot を使おう: run-webapp/use-springboot-2.md
+      - 🈠 データベースを試そう: run-webapp/try-database.md
+      - データベースを使おう: run-webapp/use-database-1.md
+      - 🈖️ データベースを使おう: run-webapp/use-database-2.md
   - ウェブ画面を作ろう: mock.md
   - 仕様書を書こう: mock.md
   - 試験をしよう: mock.md

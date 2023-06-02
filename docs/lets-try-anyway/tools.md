@@ -54,15 +54,18 @@ Windows 標準の"メモ帳"アプリがジャン拳で闘っていたときの�
 
 [PowerToys](https://learn.microsoft.com/ja-jp/windows/powertoys/)
 
-## Visual Studio SCode
+## Visual Studio Code
 
 メインのエディタ。サクラエディタはメモ帳の延長上にあります。
 VSCode は開発環境の一部です。
 
-[Visual Studio SCode](https://code.visualstudio.com/download)
+[Visual Studio Code](https://code.visualstudio.com/download)
 
 ## Windows Terminal
 
 黒い画面。慣れると一番落ち着く。
 
 [Windows Terminal](https://learn.microsoft.com/ja-jp/windows/terminal/)
+
+1. ++ctrl++ + `,(カンマ)`で設定を開く
+2. 既定値 ＞ 外観 ＞ フォント フェイス でインストールしたフォントを選ぶ（Nerd Fonts）
