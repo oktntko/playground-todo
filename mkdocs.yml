@@ -30,12 +30,12 @@ nav:
       - 見た目にこだわろう: run-in-console/appearance-app.md
   - ウェブシステム化しよう:
       - run-webapp/index.md
-      - 🈠 SpringBoot を試そう: run-webapp/try-springboot.md
-      - SpringBoot を使おう: run-webapp/use-springboot-1.md
-      - 🈖️ SpringBoot を使おう: run-webapp/use-springboot-2.md
       - 🈠 データベースを試そう: run-webapp/try-database.md
       - データベースを使おう: run-webapp/use-database-1.md
       - 🈖️ データベースを使おう: run-webapp/use-database-2.md
+      - 🈠 SpringBoot を試そう: run-webapp/try-springboot.md
+      - SpringBoot を使おう: run-webapp/use-springboot-1.md
+      - 🈖️ SpringBoot を使おう: run-webapp/use-springboot-2.md
   - ウェブ画面を作ろう: mock.md
   - 仕様書を書こう: mock.md
   - 試験をしよう: mock.md
