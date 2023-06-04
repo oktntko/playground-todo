@@ -72,7 +72,7 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 
     return Files.readAllLines(path, StandardCharsets.UTF_8).stream().map(line -> {
       String[] data = line.split("\t", -1);
-      return new ToDo(data[0], LocalDateUtils.converToLocalDate(data[1]));
+      return new ToDo(data[0], LocalDateUtils.toLocalDate(data[1]));
     }).collect(Collectors.toList());
   }
 
@@ -81,7 +81,7 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 
     Files.write(path, todoList.stream()
         .map(todo -> {
-          return todo.yarukoto() + "\t" + LocalDateUtils.converToString(todo.kizitu());
+          return todo.yarukoto() + "\t" + LocalDateUtils.toString(todo.kizitu());
         }).toList(),
         StandardCharsets.UTF_8,
         StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.CREATE);
@@ -91,14 +91,14 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 書き込むときは`\t(タブ)`か`,(カンマ)`を項目の間に入れます。
 
 ```java
-          return todo.yarukoto() + "\t" + LocalDateUtils.converToString(todo.kizitu());
+          return todo.yarukoto() + "\t" + LocalDateUtils.toString(todo.kizitu());
 ```
 
 読み込むときは区切り文字で分割して、オブジェクトに変換します。
 
 ```java
       String[] data = line.split("\t", -1);
-      return new ToDo(data[0], LocalDateUtils.converToLocalDate(data[1]));
+      return new ToDo(data[0], LocalDateUtils.toLocalDate(data[1]));
 ```
 
 - タブ文字
@@ -166,7 +166,7 @@ public record ToDo(String yarukoto, LocalDate kizitu) {
 
     for (int i = 0; i < options.size(); i++) {
       var option = options.get(i);
-      String kizitu = String.format("%10s", LocalDateUtils.converToString(option.kizitu()));
+      String kizitu = String.format("%10s", LocalDateUtils.toString(option.kizitu()));
       builder.newItem(String.valueOf(i)).text(kizitu + " | " + option.yarukoto()).add();
     }
 
@@ -335,7 +335,7 @@ ToDoの操作は同じ処理をすべきなので同じ処理にします。
     for (;;) {
       try {
         String input = MyPrompt.input("期日を入力してください (例: 2017-07-17) >", defaultKizitu);
-        kizitu = LocalDateUtils.converToLocalDate(input);
+        kizitu = LocalDateUtils.toLocalDate(input);
         break;
 
       } catch (DateTimeParseException e) {
@@ -355,7 +355,7 @@ ToDoの操作は同じ処理をすべきなので同じ処理にします。
 
       } else if (MyPrompt.confirm("「" + todo.yarukoto() + "」を変更しますか？",
           ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
-        ToDo newToDo = MyPrompt.form(todo.yarukoto(), LocalDateUtils.converToString(todo.kizitu()));
+        ToDo newToDo = MyPrompt.form(todo.yarukoto(), LocalDateUtils.toString(todo.kizitu()));
         todoList.set(index, newToDo);
         save(todoList);
 
@@ -378,7 +378,7 @@ import java.time.format.DateTimeFormatter;
 
 public class LocalDateUtils {
 
-  public static String converToString(LocalDate input) {
+  public static String toString(LocalDate input) {
     if (input == null) {
       return "";
     } else {
@@ -386,7 +386,7 @@ public class LocalDateUtils {
     }
   }
 
-  public static LocalDate converToLocalDate(String input) {
+  public static LocalDate toLocalDate(String input) {
     if (input == null || input.isEmpty()) {
       return null;
     } else {
