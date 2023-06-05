@@ -236,9 +236,7 @@
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
@@ -367,14 +365,16 @@
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
           
             
+          
+        
+          
+        
           
         
           
@@ -460,7 +460,7 @@
   
     <li class="md-nav__item">
       <a href="../../comprehension-check/anagram-2/" class="md-nav__link">
-        🈖️ アナグラムの解説
+        🈖️ アナグラム
       </a>
     </li>
   
@@ -488,7 +488,35 @@
   
     <li class="md-nav__item">
       <a href="../../comprehension-check/yakudosi-2/" class="md-nav__link">
-        🈖️ 厄年計算の解説
+        🈖️ 厄年計算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/reading1-1/" class="md-nav__link">
+        リーディング１
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/reading1-2/" class="md-nav__link">
+        🈖️ リーディング１
       </a>
     </li>
   
@@ -652,20 +680,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    ファイルに書き込む
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    ファイルから読み込む
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -750,9 +764,7 @@
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
         
@@ -1009,20 +1021,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    ファイルに書き込む
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    ファイルから読み込む
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1053,7 +1051,7 @@ Java が動く環境のメモリに保存されています。
 <p>ここで、ファイルの登場です。
 ファイルはアプリにとってのストレージ代わりになります。
 ファイルにデータを保存するのは普通ですね。</p>
-<p>では、ファイルを使ってみましょう。</p>
+<p>ここでは、ファイルを使ってデータを保存することがゴールです。</p>
 <h2 id="_2">ゴールと道筋の整理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>いきなりコードを書き始めてはいけません。
 ゴールとゴールまでの道筋を整理するのが先です。</p>
@@ -1091,285 +1089,7 @@ Java が動く環境のメモリに保存されています。
 
     end
   end</code></pre>
-<p>では、どうすればデータの管理をファイルに任せることができるでしょうか？
-"登録"という言葉があるところが、やることデータを管理しているところですね。
-上の図では</p>
-<p>①登録済みのやることを表示する<br />
-④入力されたやることを登録する<br />
-⑥登録済みのやることを削除する  </p>
-<p>が該当します。ここをファイルに任せればいいのです。</p>
-<pre class="mermaid"><code>sequenceDiagram
-  autonumber
-  actor ユーザ
-  participant app as アプリ
-  participant storage as ファイル
-
-  loop ;;
-
-    app -&gt;&gt; storage: ファイルを読み込む
-    storage --&gt;&gt; app: データを返す
-    app -&gt;&gt; ユーザ: 登録済みのやることを表示する
-    ユーザ -&gt;&gt; ユーザ: 入力したやることを見ることができる
-
-    alt やることが増えた
-      ユーザ -&gt;&gt; app: やることを入力する
-      app -&gt;&gt; storage: 入力されたやることをファイルに書き込む
-
-    else やることが完了した
-      ユーザ -&gt;&gt; app: 入力したやることを選ぶ
-      app -&gt;&gt; storage: 削除するやることをファイルに書き込む
-
-    end
-  end</code></pre>
-<p>まず、①②でファイルに保存したやることを読み込みます。<br />
-次に、⑥⑧でファイルに入力されたやることを書き込みましょう。</p>
-<p>あとは読み込み・書き込みの処理をどうやって書くのか？
-ということを調べれば十分ですね。</p>
-<p>コードに書いていきましょう。</p>
-<hr />
-<h2 id="_3">ファイルに書き込む<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>処理の順番は読み込み➡書き込みですが、ないものを読み込めません。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>
-なので、書き込みから始めましょう。</p>
-<p>『java ファイル 書き込み』で調べるといろいろ出てきて困ったと思います。
-正解も不正解もないですが、現在は下に示す<code>java.nio.file.Files</code>が一番簡単に書けると思います。</p>
-<div class="admonition">
-<p class="admonition-title">サンプルコード</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FirstApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.charset.StandardCharsets</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Files</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Path</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.StandardOpenOption</span><span class="p">;</span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FirstApp</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">  </span><span class="c1">// main メソッドは省略しています</span>
-
-<span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">FILE_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;todo-list.txt&quot;</span><span class="p">;</span>
-
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todoList</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Path</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">FILE_PATH</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">Files</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">todoList</span><span class="p">,</span>
-<span class="w">        </span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">,</span>
-<span class="w">        </span><span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">WRITE</span><span class="p">,</span><span class="w"> </span><span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">TRUNCATE_EXISTING</span><span class="p">,</span><span class="w"> </span><span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">CREATE</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="admonition">
-<p class="admonition-title">文字コード UTF-8</p>
-<p>ファイルや次に出てくるデータベースを扱う上で、データがへんな感じになったら大体こいつのせいです。
-ちょうどいいくらいの解説をしているサイトがみつからなかったので、自分で調べましょう。</p>
-</div>
-<div class="admonition">
-<p class="admonition-title">StandardOpenOption</p>
-<p><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/nio/file/StandardOpenOption.html">StandardOpenOptionの説明</a>
-を読んでもわからないものはわからないと思うので挙動を試してみましょう</p>
-</div>
-<p>ファイルの保存メソッドを使ってmainメソッドを書き換えます。</p>
-<div class="admonition">
-<p class="admonition-title">サンプルコード</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FirstApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">AnsiConsole</span><span class="p">.</span><span class="na">systemInstall</span><span class="p">();</span>
-
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;📝 Welcome Back, My To-Do!&quot;</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todoList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-
-<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;➕ やることが増えた&quot;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="w">      </span><span class="n">menu</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
-<span class="w">      </span><span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">MENU_ADD</span><span class="p">);</span>
-
-<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&quot;あなたのやることリスト&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">menu</span><span class="p">);</span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
-
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">todo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">newToDo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">input</span><span class="p">(</span><span class="s">&quot;やることを入力してください &gt;&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newToDo</span><span class="p">);</span>
-<span class="hll"><span class="w">        </span><span class="n">save</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
-</span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">confirm</span><span class="p">(</span><span class="s">&quot;「&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;」は完了しましたか？&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
-<span class="hll"><span class="w">        </span><span class="n">save</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
-</span><span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="admonition">
-<p class="admonition-title">相対パスと絶対パス</p>
-<p>ファイルはどこにできましたか？サンプルコードのようにパスを書いた人はソースコードがあるフォルダにできたのではないでしょうか。
-詳しい解説は<a href="https://and-engineer.com/articles/Y1fGpxAAAAt07ZlQ">絶対パスと相対パスの違いは？メリット・デメリット、使い分け方を解説</a>
-もう知っておくべきは<code>.(dot)</code>が現在のディレクトリ、<code>..(dot dot)</code>が一つうえのディレクトリを示すということです。
-少しパスを変えて遊んでみましょう。</p>
-</div>
-<p>ファイルの操作を調べるのは手こずったかもしれません。
-でも、処理はとても簡単でしたね。</p>
-<h2 id="_4">ファイルから読み込む<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>『java ファイル 読み込み』で調べるといろいろ出てきて困ったと思います。
-正解も不正解もないですが、現在は下に示す<code>java.nio.file.Files</code>が一番簡単に書けると思います。</p>
-<figure>
-<p><img alt="Déjà-vu.png" src="../D%C3%A9j%C3%A0-vu.png" width="480" /></p>
-</figure>
-<div class="admonition">
-<p class="admonition-title">サンプルコード</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FirstApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FirstApp</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">  </span><span class="c1">// main メソッドは省略しています</span>
-
-<span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">FILE_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;todo-list.txt&quot;</span><span class="p">;</span>
-
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">load</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Path</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">FILE_PATH</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">notExists</span><span class="p">(</span><span class="n">path</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">readAllLines</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<p>ファイルがないときに<code>Files#readAllLines</code>を実行すると
-<code>java.nio.file.NoSuchFileException</code>が発生するため、
-ファイルがなかったら空のListを返すようにしています。</p>
-<p>ファイルの読み込みメソッドを使ってmainメソッドを書き換えます。</p>
-<div class="admonition">
-<p class="admonition-title">サンプルコード</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">FirstApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">AnsiConsole</span><span class="p">.</span><span class="na">systemInstall</span><span class="p">();</span>
-
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;📝 Welcome Back, My To-Do!&quot;</span><span class="p">);</span>
-
-<span class="hll"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todoList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load</span><span class="p">();</span>
-</span>
-<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;➕ やることが増えた&quot;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="w">      </span><span class="n">menu</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
-<span class="w">      </span><span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">MENU_ADD</span><span class="p">);</span>
-
-<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&quot;あなたのやることリスト&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">menu</span><span class="p">);</span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
-
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">todo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">newToDo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">input</span><span class="p">(</span><span class="s">&quot;やることを入力してください &gt;&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newToDo</span><span class="p">);</span>
-<span class="w">        </span><span class="n">save</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
-
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">confirm</span><span class="p">(</span><span class="s">&quot;「&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;」は完了しましたか？&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
-<span class="w">        </span><span class="n">save</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<p>アプリを停止してもToDoはなくなりません。
-かなりいい感じになったのではないでしょうか？</p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>ファイルを作ってもいいです。ただ、どう保存するかわかっている必要があります。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<p>では、どうすればデータの管理をファイルに任せることができるでしょうか？</p>
 
 
 
@@ -1445,7 +1165,7 @@ Java が動く環境のメモリに保存されています。
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "header.autohide", "navigation.indexes", "navigation.footer", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.footer", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
