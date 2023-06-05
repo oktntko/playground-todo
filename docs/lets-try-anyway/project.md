@@ -60,16 +60,7 @@ Git の操作に触れるのはここだけです。コミットをしたりブ�
 
 ## 📃 プロジェクトのソースコードを持ってこよう
 
-1. GitHubの[playground-todo](https://github.com/oktntko/playground-todo) をブラウザで表示する.
-2. `.(ドット)`を入力する.
-3. `todo-app`を右クリックして Download ボタンをクリックする.
-   - ![project-github-confirm-00](project-github-confirm-00.png){ width="240" }
-4. エクスプローラーのアドレスバーに `\\wsl.localhost\Ubuntu\home\%USERNAME%\my-todo` を入力する.
-5. "フォルダの選択"をクリックする.
-6. 「サイトにファイルの読み取りを許可しますか？」 ＞ ファイルを表示する.
-   - ![project-github-confirm-01](project-github-confirm-01.png){ width="320" }
-7. 「「my-todo」に変更を保存しますか？」 ＞ 変更を保存.
-   - ![project-github-confirm-02](project-github-confirm-02.png){ width="320" }
+TODO
 
 /// admonition | 不要なファイルを削除しよう
 

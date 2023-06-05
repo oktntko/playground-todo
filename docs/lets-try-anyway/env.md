@@ -126,7 +126,7 @@ Linux が生まれてからたった 30年ちょっと。今から30年後、世
     - Windows に USB を差し込むと USBの中身が見られるよね。
     - それと同じ。Linux のPCに Windows のUSBがぶっ刺さっている状態。
   - どうやってみる？
-    - Linux からみた `/c/`ディレクトリが Windows の`C:\`ディレクトリ
+    - Linux からみた `/mnt/c/`ディレクトリが Windows の`C:\`ディレクトリ
 
 ### なんで Windows 上で Linux を動かすの？
 
@@ -213,7 +213,7 @@ systemd=true
 ※Windows Terminal を開けば再起動します。
 
 ```sh title="PowerShell"
-wsl --install
+wsl --shutdown
 ```
 
 ---
@@ -222,8 +222,8 @@ wsl --install
 
 1\. [Install using the apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)の章で次の二つを実施する
 
-- Set up the repository
-- Install Docker Engine
+* Set up the repository
+* Install Docker Engine
 
 2\. 管理者権限なしで操作を実行できるようにする
 
@@ -241,7 +241,7 @@ sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 ※Windows Terminal を開けば再起動します。
 
 ```sh title="PowerShell"
-wsl --install
+wsl --shutdown
 ```
 
 5\. Docker サービスを起動する

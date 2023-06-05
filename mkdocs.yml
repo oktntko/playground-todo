@@ -15,9 +15,11 @@ nav:
       - FizzBuzz問題: comprehension-check/fizzbuzz-1.md
       - 🈖️ FizzBuzz問題: comprehension-check/fizzbuzz-2.md
       - アナグラム: comprehension-check/anagram-1.md
-      - 🈖️ アナグラムの解説: comprehension-check/anagram-2.md
+      - 🈖️ アナグラム: comprehension-check/anagram-2.md
       - 厄年計算: comprehension-check/yakudosi-1.md
-      - 🈖️ 厄年計算の解説: comprehension-check/yakudosi-2.md
+      - 🈖️ 厄年計算: comprehension-check/yakudosi-2.md
+      - リーディング１: comprehension-check/reading1-1.md
+      - 🈖️ リーディング１: comprehension-check/reading1-2.md
   - コンソールで動かそう:
       - run-in-console/index.md
       - 🈠 対話型アプリを試そう: run-in-console/interactive-app.md
@@ -51,7 +53,7 @@ theme:
     text: Noto Sans JP
     code: Roboto Mono
   features:
-    - navigation.expand # サイドバーにあるセクションを最初からすべて展開する
+    # - navigation.expand # サイドバーにあるセクションを最初からすべて展開する
     - header.autohide # タイトルバーが隠れるようにする
     - navigation.indexes # セクション インデックス ページが有効になっている場合、ドキュメントをセクションに直接添付できます。これは、概要ページを提供する場合に特に便利です
     - navigation.footer # フッターには、現在のページの前のページと次のページへのリンクを含めることができます。

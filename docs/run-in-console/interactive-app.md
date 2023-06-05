@@ -81,13 +81,15 @@ public class CalcYakudosiApp {
 
 ## 前提条件の確認
 
-対話型アプリを実行は、VSCode の Run から実行するようにしてください。
-コマンドラインからの実行だとうまくいきません。
-VSCode の Run から実行するとその結果が残るので、java コマンドに置き換えて実行することもできる。
+**WSL（Windows Terminal）のコマンドから VSCode を起動してください。**
+つまり、 VSCode は、`code`コマンドから起動してください。
 
-VSCode で Java の拡張機能とか諸々がうまく機能しないので、WSL（Windows Terminal）のコマンドから起動してください。
-Windows のメニュー・アプリから起動するのはNG。
-つまり、`code`コマンドから起動する。
+Windows のメニュー・アプリから VSCode を起動すると、Java の拡張機能とか諸々がうまく機能しません。（謎現象）
+
+**対話型アプリを実行は、VSCode の Run から実行するようにしてください。**
+コマンドラインからの実行だとうまくいきません。
+
+VSCode の Run から実行するとその結果が残るので、java コマンドに置き換えて実行することもできます。
 
 ## 完成系のイメージ
 
@@ -178,9 +180,16 @@ TODO: 動画
 [consoleui](https://github.com/awegmann/consoleui)
 
 ・・・
+
+パッケージはどこにいる？
+
+<figure markdown>
+  ![Image](where-packages.png){ width="320" }
+</figure>
+
 ///
 
-`consoleui`の機能のうち利用しやすいものを抜粋した簡単にしたものが`MyPrompt.java`です。
+`consoleui`の機能のうち利用しやすいものを抜粋し、簡単にしたものが`MyPrompt.java`です。
 このうち、`MyPrompt#input`メソッドが自由な入力を行えます。
 実行時引数のかわりに使えそうですね。やってみましょう。
 
@@ -322,14 +331,3 @@ TODO: 動画
 - 「あなたの厄年は」を出力した後に、"タメ"があってもいいですね。
 
 ///
-
-## ToDoアプリを作りはじめる前に
-
-`MyPrompt#showDemo` に使い方をまとめています。
-下記のように呼び出して試してみてください。
-
-```java
-    AnsiConsole.systemInstall();
-
-    MyPrompt.showDemo();
-```

@@ -323,9 +323,9 @@ dependencies {
 }
 ```
 
-追加したらいったんクリーンアップしましょう。
+追加したらいったんクリーンアップ(Clean Workspace)しましょう。
 
-![Image](../assets/java-clean-workspace.png)
+![Image](../assets/java-clean-workspace.png){ width="480" }
 
 /// admonition | サンプルコード
 
