@@ -417,6 +417,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../comprehension-check/reading1-1/" class="md-nav__link">
+        リーディング１
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comprehension-check/reading1-2/" class="md-nav__link">
+        🈖️ リーディング１
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../comprehension-check/fizzbuzz-1/" class="md-nav__link">
         FizzBuzz問題
       </a>
@@ -489,34 +517,6 @@
     <li class="md-nav__item">
       <a href="../../comprehension-check/yakudosi-2/" class="md-nav__link">
         🈖️ 厄年計算
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../comprehension-check/reading1-1/" class="md-nav__link">
-        リーディング１
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../comprehension-check/reading1-2/" class="md-nav__link">
-        🈖️ リーディング１
       </a>
     </li>
   
@@ -1098,8 +1098,8 @@
 <h1 id="_1">対話型アプリを試そう<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>対話型(interactive)アプリとは、１回の入力・１回の出力で終わらないアプリです。
 難しくありません。一般的なアプリです。</p>
-<p>地図アプリを開き、条件を入力して、結果が表示された後、アプリは終了しますか？
-終了するどころか、表示された結果が次の入力のサジェストにつながっていたりします。
+<p>地図アプリを開き、条件を入力して、結果が表示された後、アプリは終了しますか？</p>
+<p>終了するどころか、表示された結果が次の入力のサジェストにつながっていたりします。
 当然、終了せずに別の条件を入力しなおせるようになっていますね。</p>
 <p>では、理解度の確認で作成した厄年計算アプリはどうだったでしょうか？
 入力しなおすときに<code>java</code>コマンドでアプリを起動する必要がありました。</p>
@@ -1228,11 +1228,24 @@
 <p><strong>WSL（Windows Terminal）のコマンドから VSCode を起動してください。</strong>
 つまり、 VSCode は、<code>code</code>コマンドから起動してください。</p>
 <p>Windows のメニュー・アプリから VSCode を起動すると、Java の拡張機能とか諸々がうまく機能しません。（謎現象）</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">VSCodeの開き方</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>❯<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/my-todo/todo-app<span class="w"> </span><span class="c1"># ダウンロードした`todo-app`ディレクトリに移動する</span>
+❯<span class="w"> </span>code<span class="w"> </span>.<span class="w"> </span><span class="c1"># 現在いるディレクトリ(`~/my-todo/todo-app`)をルートディレクトリとして VSCode を起動する</span>
+</code></pre></div></td></tr></table></div>
+<hr />
 <p><strong>対話型アプリを実行は、VSCode の Run から実行するようにしてください。</strong>
 コマンドラインからの実行だとうまくいきません。</p>
 <p>VSCode の Run から実行するとその結果が残るので、java コマンドに置き換えて実行することもできます。</p>
+<ol>
+<li>VSCodeで <code>src/main/java/playground/todo/FirstApp.java</code> を開く.</li>
+<li><code>public static void main(String[] args) {</code> の上に表示されている <code>Run | Debug</code> から、<code>Run</code> をクリックする.<ul>
+<li><img alt="project-hello-world-vscode-01" src="../../assets/project-hello-world-vscode-01.png" width="320" /></li>
+</ul>
+</li>
+</ol>
 <h2 id="_3">完成系のイメージ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>TODO: 動画</p>
+<video src="../CalcYakudosiApp.mp4" controls type="video/mp4" width="1280px"></video>
+
 <p>厄年計算アプリを対話型(interactive)アプリにするための条件を確認しましょう。</p>
 <blockquote>
 <p>対話型(interactive)アプリとは、１回の入力・１回の出力で終わらないアプリ</p>
@@ -1320,7 +1333,7 @@
 <div class="admonition">
 <p class="admonition-title">ライブラリ と OSS と パッケージマネージャー</p>
 <p><a href="https://github.com/awegmann/consoleui">consoleui</a></p>
-<p>・・・</p>
+<p>TODO</p>
 <p>パッケージはどこにいる？</p>
 <figure>
 <p><img alt="Image" src="../where-packages.png" width="320" /></p>
