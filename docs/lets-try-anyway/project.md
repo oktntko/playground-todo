@@ -90,9 +90,9 @@ WSLにダウンロードするとファイル名に"Zone.Identifier"とついた
 
 1. VSCodeで `src/main/java/playground/todo/FirstApp.java` を開く.
 2. `public static void main(String[] args) {` の上に表示されている `Run | Debug` から、`Run` をクリックする.
-   - ![project-hello-world-vscode-01](project-hello-world-vscode-01.png){ width="320" }
+   - ![project-hello-world-vscode-01](../assets/project-hello-world-vscode-01.png){ width="320" }
 3. `TERMINAL`タブに`Hello World!`が表示される
-   - ![project-hello-world-vscode-02](project-hello-world-vscode-02.png){ width="320" }
+   - ![project-hello-world-vscode-02](../assets/project-hello-world-vscode-02.png){ width="320" }
 
 ### コンソールからプログラムを実行する方法
 

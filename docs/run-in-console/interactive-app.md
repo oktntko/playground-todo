@@ -4,6 +4,7 @@
 難しくありません。一般的なアプリです。
 
 地図アプリを開き、条件を入力して、結果が表示された後、アプリは終了しますか？
+
 終了するどころか、表示された結果が次の入力のサジェストにつながっていたりします。
 当然、終了せずに別の条件を入力しなおせるようになっていますね。
 
@@ -86,14 +87,25 @@ public class CalcYakudosiApp {
 
 Windows のメニュー・アプリから VSCode を起動すると、Java の拡張機能とか諸々がうまく機能しません。（謎現象）
 
+```sh title="VSCodeの開き方"
+❯ cd ~/my-todo/todo-app # ダウンロードした`todo-app`ディレクトリに移動する
+❯ code . # 現在いるディレクトリ(`~/my-todo/todo-app`)をルートディレクトリとして VSCode を起動する
+```
+
+---
+
 **対話型アプリを実行は、VSCode の Run から実行するようにしてください。**
 コマンドラインからの実行だとうまくいきません。
 
 VSCode の Run から実行するとその結果が残るので、java コマンドに置き換えて実行することもできます。
 
+1. VSCodeで `src/main/java/playground/todo/FirstApp.java` を開く.
+2. `public static void main(String[] args) {` の上に表示されている `Run | Debug` から、`Run` をクリックする.
+   - ![project-hello-world-vscode-01](../assets/project-hello-world-vscode-01.png){ width="320" }
+
 ## 完成系のイメージ
 
-TODO: 動画
+<video src="../CalcYakudosiApp.mp4" controls type="video/mp4" width="1280px"></video>
 
 厄年計算アプリを対話型(interactive)アプリにするための条件を確認しましょう。
 
@@ -179,7 +191,7 @@ TODO: 動画
 /// admonition | ライブラリ と OSS と パッケージマネージャー
 [consoleui](https://github.com/awegmann/consoleui)
 
-・・・
+TODO
 
 パッケージはどこにいる？
 

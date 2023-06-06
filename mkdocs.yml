@@ -12,14 +12,14 @@ nav:
       - プロジェクトを作ろう: lets-try-anyway/project.md
   - 理解度を確認しよう:
       - comprehension-check/index.md
+      - リーディング１: comprehension-check/reading1-1.md
+      - 🈖️ リーディング１: comprehension-check/reading1-2.md
       - FizzBuzz問題: comprehension-check/fizzbuzz-1.md
       - 🈖️ FizzBuzz問題: comprehension-check/fizzbuzz-2.md
       - アナグラム: comprehension-check/anagram-1.md
       - 🈖️ アナグラム: comprehension-check/anagram-2.md
       - 厄年計算: comprehension-check/yakudosi-1.md
       - 🈖️ 厄年計算: comprehension-check/yakudosi-2.md
-      - リーディング１: comprehension-check/reading1-1.md
-      - 🈖️ リーディング１: comprehension-check/reading1-2.md
   - コンソールで動かそう:
       - run-in-console/index.md
       - 🈠 対話型アプリを試そう: run-in-console/interactive-app.md

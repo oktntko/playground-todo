@@ -1,13 +1,15 @@
 # 📖 リーディング１ (目標⏰: 5分)
 
-次のコードの問題点を指摘せよ。
+次のコードの問題点を指摘せよ。[^1]
+
+[^1]: [北ソフト工房 ＞ Java 練習問題集 ＞ 練習問題 4 - 6](http://kitako.tokyo/lib/JavaExercise.aspx?id=4)を参考にプログラムを書いた。
 
 コードの意図は次の通り。
 
 - 引数は対戦成績で、0 が負け、1 が勝ちを意味する
 - 勝ちの総数、負けの総数を表示したい
 
-```java title="リーディング１"
+```java title="Reading1.java"
   static final int zero = 0;
   static final int one = 1;
 
@@ -27,5 +29,3 @@
     System.out.println("Victory=" + a + ", Defeat=" + b);
 }
 ```
-
-[練習問題 4 - 6](http://kitako.tokyo/lib/JavaExercise.aspx?id=4)を参考にプログラムを書いた。
