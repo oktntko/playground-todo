@@ -13,7 +13,7 @@
 
 ここでは、厄年計算アプリを対話型にします。
 
-/// admonition | 🔰 サンプルコード
+/// details | 🔰 サンプルコード
 
 これはサンプルです。自分で作った厄年計算アプリを改造しましょう。
 
@@ -80,7 +80,7 @@ public class CalcYakudosiApp {
 
 ///
 
-## 前提条件の確認
+## 実行時の注意点
 
 **WSL（Windows Terminal）のコマンドから VSCode を起動してください。**
 つまり、 VSCode は、`code`コマンドから起動してください。
@@ -186,9 +186,10 @@ VSCode の Run から実行するとその結果が残るので、java コマン
 
 『java コンソール 入力』で調べると、`InputStreamReader`クラスや`Scanner`クラスの利用で実現する方法が紹介されています。
 ただ、使いづらく記載が冗長になります。
-こういうときはライブラリの力を借ります。
+こういうときはパッケージの力を借ります。
 
-/// admonition | ライブラリ と OSS と パッケージマネージャー
+/// admonition | パッケージ と OSS と パッケージマネージャー
+
 [consoleui](https://github.com/awegmann/consoleui)
 
 TODO

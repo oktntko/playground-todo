@@ -102,6 +102,6 @@ WSLにダウンロードするとファイル名に"Zone.Identifier"とついた
 Hello World!
 ```
 
-![project-hello-world-console-01](project-hello-world-console-01.png){ width="320" }
+![project-hello-world-console-01](../assets/project-hello-world-console-01.png){ width="320" }
 
 これで準備は完了です！

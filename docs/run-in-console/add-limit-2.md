@@ -347,23 +347,46 @@ ToDoの操作は同じ処理をすべきなので同じ処理にします。
   }
 ```
 
-```java title="FirstApp.java" hl_lines="2 8"
+```java title="FirstApp.java" hl_lines="22 28"
+public class FirstApp {
+
+  public static void main(String[] args) throws IOException, SQLException {
+    AnsiConsole.systemInstall();
+
+    System.out.println("📝 Welcome Back, My To-Do!");
+
+    List<ToDo> todoList = TryDatabase.select();
+
+    final String MENU_LABEL = "➕ やることが増えた";
+    final ToDo MENU_ADD = new ToDo(null, MENU_LABEL, null);
+
+    for (;;) {
+      List<ToDo> menu = new ArrayList<>();
+      menu.addAll(todoList);
+      menu.add(MENU_ADD);
+
+      int index = MyPrompt.select("あなたのやることリスト", menu);
+      var todo = menu.get(index);
+
       if (todo == MENU_ADD) {
         ToDo newToDo = MyPrompt.form("", "");
-        todoList.add(newToDo);
-        save(todoList);
+        int id = TryDatabase.insert(newToDo.yarukoto(), newToDo.kizitu());
+        todoList.add(new ToDo(id, newToDo.yarukoto(), newToDo.kizitu()));
 
       } else if (MyPrompt.confirm("「" + todo.yarukoto() + "」を変更しますか？",
           ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
         ToDo newToDo = MyPrompt.form(todo.yarukoto(), LocalDateUtils.toString(todo.kizitu()));
+        TryDatabase.update(newToDo.yarukoto(), newToDo.kizitu(), todo.id());
         todoList.set(index, newToDo);
-        save(todoList);
 
       } else if (MyPrompt.confirm("「" + todo.yarukoto() + "」は完了しましたか？",
           ConfirmChoice.ConfirmationValue.YES) == ConfirmChoice.ConfirmationValue.YES) {
+        TryDatabase.delete(todo.id());
         todoList.remove(index);
-        save(todoList);
       }
+    }
+  }
+}
 ```
 
 ///
