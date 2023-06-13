@@ -633,7 +633,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    前提条件の確認
+    実行時の注意点
   </a>
   
 </li>
@@ -808,10 +808,6 @@
         
           
         
-          
-        
-          
-        
       
       
         
@@ -884,34 +880,6 @@
     <li class="md-nav__item">
       <a href="../../run-webapp/try-springboot/" class="md-nav__link">
         🈠 SpringBoot を試そう
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../run-webapp/use-springboot-1/" class="md-nav__link">
-        SpringBoot を使おう
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../run-webapp/use-springboot-2/" class="md-nav__link">
-        🈖️ SpringBoot を使おう
       </a>
     </li>
   
@@ -1044,7 +1012,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    前提条件の確認
+    実行時の注意点
   </a>
   
 </li>
@@ -1104,8 +1072,8 @@
 <p>では、理解度の確認で作成した厄年計算アプリはどうだったでしょうか？
 入力しなおすときに<code>java</code>コマンドでアプリを起動する必要がありました。</p>
 <p>ここでは、厄年計算アプリを対話型にします。</p>
-<div class="admonition">
-<p class="admonition-title">🔰 サンプルコード</p>
+<details>
+<summary>🔰 サンプルコード</summary>
 <p>これはサンプルです。自分で作った厄年計算アプリを改造しましょう。</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CalcYakudosiApp.java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1223,8 +1191,8 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-</div>
-<h2 id="_2">前提条件の確認<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+</details>
+<h2 id="_2">実行時の注意点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><strong>WSL（Windows Terminal）のコマンドから VSCode を起動してください。</strong>
 つまり、 VSCode は、<code>code</code>コマンドから起動してください。</p>
 <p>Windows のメニュー・アプリから VSCode を起動すると、Java の拡張機能とか諸々がうまく機能しません。（謎現象）</p>
@@ -1329,9 +1297,9 @@
 <p>どうやって入力すればいいでしょうか？  </p>
 <p>『java コンソール 入力』で調べると、<code>InputStreamReader</code>クラスや<code>Scanner</code>クラスの利用で実現する方法が紹介されています。
 ただ、使いづらく記載が冗長になります。
-こういうときはライブラリの力を借ります。</p>
+こういうときはパッケージの力を借ります。</p>
 <div class="admonition">
-<p class="admonition-title">ライブラリ と OSS と パッケージマネージャー</p>
+<p class="admonition-title">パッケージ と OSS と パッケージマネージャー</p>
 <p><a href="https://github.com/awegmann/consoleui">consoleui</a></p>
 <p>TODO</p>
 <p>パッケージはどこにいる？</p>

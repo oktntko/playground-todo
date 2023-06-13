@@ -828,10 +828,6 @@
         
           
         
-          
-        
-          
-        
       
       
         
@@ -904,34 +900,6 @@
     <li class="md-nav__item">
       <a href="../../run-webapp/try-springboot/" class="md-nav__link">
         🈠 SpringBoot を試そう
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../run-webapp/use-springboot-1/" class="md-nav__link">
-        SpringBoot を使おう
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../run-webapp/use-springboot-2/" class="md-nav__link">
-        🈖️ SpringBoot を使おう
       </a>
     </li>
   
@@ -1599,22 +1567,68 @@ ToDoの操作は同じ処理をすべきなので同じ処理にします。</p>
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">todo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FirstApp</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">AnsiConsole</span><span class="p">.</span><span class="na">systemInstall</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;📝 Welcome Back, My To-Do!&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ToDo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todoList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TryDatabase</span><span class="p">.</span><span class="na">select</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">MENU_LABEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;➕ やることが増えた&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">ToDo</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ToDo</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="n">MENU_LABEL</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ToDo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">      </span><span class="n">menu</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
+<span class="w">      </span><span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">MENU_ADD</span><span class="p">);</span>
+
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&quot;あなたのやることリスト&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">menu</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">todo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MENU_ADD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">        </span><span class="n">ToDo</span><span class="w"> </span><span class="n">newToDo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">form</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
-</span><span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newToDo</span><span class="p">);</span>
-<span class="w">        </span><span class="n">save</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
+</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TryDatabase</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">newToDo</span><span class="p">.</span><span class="na">yarukoto</span><span class="p">(),</span><span class="w"> </span><span class="n">newToDo</span><span class="p">.</span><span class="na">kizitu</span><span class="p">());</span>
+<span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ToDo</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">newToDo</span><span class="p">.</span><span class="na">yarukoto</span><span class="p">(),</span><span class="w"> </span><span class="n">newToDo</span><span class="p">.</span><span class="na">kizitu</span><span class="p">()));</span>
 
 <span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">confirm</span><span class="p">(</span><span class="s">&quot;「&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">todo</span><span class="p">.</span><span class="na">yarukoto</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;」を変更しますか？&quot;</span><span class="p">,</span>
 <span class="w">          </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">        </span><span class="n">ToDo</span><span class="w"> </span><span class="n">newToDo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">form</span><span class="p">(</span><span class="n">todo</span><span class="p">.</span><span class="na">yarukoto</span><span class="p">(),</span><span class="w"> </span><span class="n">LocalDateUtils</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">todo</span><span class="p">.</span><span class="na">kizitu</span><span class="p">()));</span>
-</span><span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">newToDo</span><span class="p">);</span>
-<span class="w">        </span><span class="n">save</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
+</span><span class="w">        </span><span class="n">TryDatabase</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">newToDo</span><span class="p">.</span><span class="na">yarukoto</span><span class="p">(),</span><span class="w"> </span><span class="n">newToDo</span><span class="p">.</span><span class="na">kizitu</span><span class="p">(),</span><span class="w"> </span><span class="n">todo</span><span class="p">.</span><span class="na">id</span><span class="p">());</span>
+<span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">newToDo</span><span class="p">);</span>
 
 <span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MyPrompt</span><span class="p">.</span><span class="na">confirm</span><span class="p">(</span><span class="s">&quot;「&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">todo</span><span class="p">.</span><span class="na">yarukoto</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;」は完了しましたか？&quot;</span><span class="p">,</span>
 <span class="w">          </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ConfirmChoice</span><span class="p">.</span><span class="na">ConfirmationValue</span><span class="p">.</span><span class="na">YES</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">TryDatabase</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">todo</span><span class="p">.</span><span class="na">id</span><span class="p">());</span>
 <span class="w">        </span><span class="n">todoList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
-<span class="w">        </span><span class="n">save</span><span class="p">(</span><span class="n">todoList</span><span class="p">);</span>
 <span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="admonition">
