@@ -213,7 +213,15 @@ JSONテキストが表示されたはずです。
 
 ### コンソールアプリからコードを直接実行せずにコードを実行しよう
 
-こういうところ。
+何が変わったのか？に触れていませんでした。
+
+今は SpringBoot がウェブアプリとして立ち上がっただけで、
+今まで作っていた ToDoアプリ は何も変わっていません。
+
+<figure markdown>
+  <figcaption>single app!</figcaption>
+  ![try-springboot-01.png](try-springboot-01.png){ width="640" }
+</figure>
 
 ```java title="FirstApp.java"
     List<ToDo> todoList = TryDatabase.select();
@@ -235,7 +243,13 @@ JSONテキストが表示されたはずです。
 
 どうすればいいか？
 
-HTTP通信を行います。
+HTTP通信を行います。二つのアプリに架け橋をかけましょう。
+
+<figure markdown>
+  <figcaption>two apps!</figcaption>
+  ![try-springboot-02.png](try-springboot-02.png){ width="640" }
+</figure>
+
 Unirest は curlコマンドと似ていますね。
 
 ```diff title="FirstApp.java"
@@ -284,6 +298,76 @@ Unirest はライブラリ
 コンソールアプリから動かすと、ウェブアプリのログが流れるはず。
 データベースのデータも増えたり消えたりするはず。
 
-### コンソールアプリをウェブ画面に差し替えると・・・？
+結果は何も変わりません。
+でも、システムの構成が変わりました。
+シーケンス図を更新しましょう。
 
-いよいよ完成！
+```mermaid
+sequenceDiagram
+  autonumber
+  actor ユーザ
+  participant client as コンソールアプリ
+  participant server as ウェブアプリ
+  participant storage as データベース
+
+  loop ;;
+
+    ユーザ ->> client: アプリを使う
+    client ->> server: ToDo を要求する
+    server ->> storage: ToDo をすべて読み込む
+    storage -->> server: データを返す
+    server -->> client: データを返す
+    client ->> ユーザ: 登録済みの ToDo を表示する
+    ユーザ ->> ユーザ: 入力した ToDo を見ることができる
+
+    alt ToDo が増えた
+      ユーザ ->> client: ToDo を入力する
+      client ->> server: 入力された ToDo を渡す
+      server ->> storage: ToDo を登録する
+
+    else ToDo が変わった
+      ユーザ ->> client: ToDo を選ぶ
+      ユーザ ->> client: ToDo を入力する
+      client ->> server: 入力された ToDo を渡す
+      server ->> storage: ToDo を更新する
+
+    else ToDo が完了した
+      ユーザ ->> client: ToDo を選ぶ
+      client ->> server: 選択された ToDo を渡す
+      server ->> storage: ToDo を削除する
+
+    end
+  end
+```
+
+<p style="font-size: 24px; text-align: center; font-weight: bold;">え？複雑になってますやん...</p>
+
+た、確かに。
+
+いやしかし、データベースの特性を思い出してください。
+
+- 同時に編集できる
+- 大量のデータを保存・検索できる
+- なんかあれば
+
+つまり、データベースを使うということは、一か所に大量のデータを集めて、同時に編集するということです。
+
+データベースが一か所にいてユーザがたくさんいる場合、
+コンソールアプリだけでデータベースを操作しようとすると、
+**ユーザの手元にあるアプリにデータベースの認証情報や接続情報を公開する**必要があります。
+
+プログラムに書いていない操作でもやりたい放題できてしまいます。
+**信頼関係のある間柄の人にしか使ってもらえませんね。**
+
+しかし、ウェブアプリを間に挟めば解決するのです。
+
+ウェブアプリをデータベースと同じ場所に置き、
+ウェブアプリにデータベースの認証情報や接続情報を持たせます。
+**コンソールアプリには、ウェブアプリのURLだけ設定しておきます。**
+
+つまり、ユーザの手元には公開してもいい情報だけ与えて、秘密の情報は守るのです。
+こうすれば、**たくさんの人に使ってもらうことができます。**
+
+さて、コンソールアプリをウェブ画面に差し替えると・・・？
+
+**いよいよToDoアプリが完成します！**
