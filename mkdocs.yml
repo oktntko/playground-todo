@@ -21,22 +21,29 @@ nav:
       - 厄年計算: comprehension-check/yakudosi-1.md
       - 🈖️ 厄年計算: comprehension-check/yakudosi-2.md
   - コンソールで動かそう:
-      - run-in-console/index.md
-      - 🈠 対話型アプリを試そう: run-in-console/interactive-app.md
-      - アプリの基礎を作ろう: run-in-console/base-app-1.md
-      - 🈖️ アプリの基礎を作ろう: run-in-console/base-app-2.md
-      - ファイルを使おう: run-in-console/use-file-1.md
-      - 🈖️ ファイルを使おう: run-in-console/use-file-2.md
-      - 期日も管理しよう: run-in-console/add-limit-1.md
-      - 🈖️ 期日も管理しよう: run-in-console/add-limit-2.md
-      - 見た目にこだわろう: run-in-console/appearance-app.md
+      - run-consoleapp/index.md
+      - 🈠 対話型アプリを試そう: run-consoleapp/interactive-app.md
+      - アプリの基礎を作ろう: run-consoleapp/base-app-1.md
+      - 🈖️ アプリの基礎を作ろう: run-consoleapp/base-app-2.md
+      - ファイルを使おう: run-consoleapp/use-file-1.md
+      - 🈖️ ファイルを使おう: run-consoleapp/use-file-2.md
+      - 期日も管理しよう: run-consoleapp/add-limit-1.md
+      - 🈖️ 期日も管理しよう: run-consoleapp/add-limit-2.md
+      - 見た目にこだわろう: run-consoleapp/appearance-app.md
   - ウェブシステム化しよう:
       - run-webapp/index.md
       - 🈠 データベースを試そう: run-webapp/try-database.md
       - データベースを使おう: run-webapp/use-database-1.md
       - 🈖️ データベースを使おう: run-webapp/use-database-2.md
       - 🈠 SpringBoot を試そう: run-webapp/try-springboot.md
-  - ウェブ画面を作ろう: mock.md
+  - ウェブ画面を作ろう:
+      - run-webfront/index.md
+      - 🈠 ウェブアプリに接続しよう: run-webfront/connect-webapp.md
+      - 🈠 画面にデータを出そう: run-webfront/output-webfront.md
+      - 🈠 画面から登録しよう: run-webfront/post-from-webfront.md
+      - 🈠 画面遷移をしよう: run-webfront/transition-screen.md
+      - 削除と変更をしよう: run-webfront/add-feature-1.md
+      - 🈖️ 削除と変更をしよう: run-webfront/add-feature-2.md
   - 仕様書を書こう: mock.md
   - 試験をしよう: mock.md
   - 仕様変更をしよう: mock.md
